@@ -1314,4 +1314,114 @@ h3 span,
     transition-duration: 0.01ms !important;
   }
 }
+``````css
+/* ===== OISHI IMAGE ALIGNMENT UPDATE ===== */
+
+/* Hero photographs */
+.hero-image {
+  background-size: cover;
+  background-position: center 40%;
+  background-repeat: no-repeat;
+}
+
+/* Portrait: Who I Am */
+.portrait-frame {
+  width: 100%;
+  max-width: 490px;
+  aspect-ratio: 1261 / 1280;
+  overflow: visible;
+}
+
+.portrait-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+}
+
+/* ULAB campus background */
+.ulab-banner {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+}
+
+.ulab-background {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* Academic portfolio: 14 square images */
+.work-visual {
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+}
+
+.work-visual img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* Activity thumbnails */
+.activity-thumb {
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+}
+
+.activity-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* Achievement cards */
+.achievement-card img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* Personal photo gallery */
+.personal-gallery {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.personal-gallery img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  object-position: center;
+  background: var(--navy-2);
+  border: 1px solid var(--line);
+  transition: transform 0.3s ease;
+}
+
+.personal-gallery img:hover {
+  transform: translateY(-4px);
+}
+
+@media (max-width: 700px) {
+  .personal-gallery {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+  .work-visual {
+    aspect-ratio: 1 / 1;
+  }
+
+  .portrait-frame {
+    max-width: 410px;
+    margin-inline: auto;
+  }
+}
 ```
