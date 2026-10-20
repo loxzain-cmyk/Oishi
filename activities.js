@@ -147,11 +147,11 @@ function renderEditorialRows(items, organisation, category, startIndex = 0) {
   return rows.join("");
 }
 
-/* ULAB TV */
-document.querySelector("#ulabTvGrid").innerHTML =
-  P.tv.map((project, index) =>
-    videoCard(project, index, "ULAB TV")
-  ).join("");
+P.tv
+  .filter(project => project[2] && project[2].trim() !== "")
+  .slice(0, 12)
+  .map((project, index) => videoCard(project, index, "ULAB TV"))
+  .join("");
 
 /* THE ULABIAN
    First row: two poems together.
