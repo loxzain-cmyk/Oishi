@@ -867,48 +867,44 @@
 </head>
 
 <body>
-  <!-- NAVIGATION -->
-  <header class="site-header" id="top">
-    <nav class="navbar container" aria-label="Main navigation">
-      <a class="brand" href="index.html" aria-label="Oishi home">OISHI<span>.</span></a>
+<!-- NAVIGATION -->
+<header class="site-header" id="top">
+  <nav class="navbar container" aria-label="Main navigation">
 
-      <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation" aria-expanded="false">
-        <i class="fa-solid fa-bars"></i>
-      </button>
+    <a class="brand" href="index.html#home" aria-label="Oishi home">
+      OISHI<span>.</span>
+    </a>
 
-      <ul class="nav-links" id="navLinks">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="portfolio.html">Portfolio</a></li>
-        <li><a href="activities.html">Activities</a></li>
-        <li><a href="contact.html" class="active">Contact</a></li>
-        <li><a href="mailto:fariaahmedoishi@gmail.com" class="nav-cta">Let's Connect <i class="fa-solid fa-arrow-up-right-from-square"></i></a></li>
-      </ul>
-    </nav>
-  </header>
+    <button
+      class="menu-toggle"
+      id="menuToggle"
+      aria-label="Toggle navigation"
+      aria-expanded="false"
+      aria-controls="navLinks"
+      type="button"
+    >
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
 
-  <main>
-    <!-- HERO -->
-    <section class="hero">
-      <div class="container">
-        <div class="hero-content reveal">
-          <div class="eyebrow">Contact & Collaboration</div>
-          <h1>Let's Start a <span>Conversation.</span></h1>
-          <p class="hero-description">
-            Have a project in mind, a story to share, or an opportunity to discuss?
-            I'd love to hear from you. Let's connect and create something meaningful together.
-          </p>
-          <div class="hero-actions">
-            <a href="#contact-form" class="btn btn-primary">
-              Send a Message <i class="fa-solid fa-arrow-right"></i>
-            </a>
-            <a href="mailto:fariaahmedoishi@gmail.com" class="btn btn-secondary">
-              <i class="fa-regular fa-envelope"></i> Email Me
-            </a>
-          </div>
-        </div>
-      </div>
-    </section>
+    <div class="nav-links" id="navLinks">
+      <a class="nav-link" href="index.html#home">HOME</a>
+      <a class="nav-link" href="about.html">ABOUT ME</a>
+      <a class="nav-link" href="portfolio.html">PORTFOLIO</a>
+      <a class="nav-link" href="activities.html">EXTRA CURRICULAR ACTIVITIES</a>
+      <a class="nav-link active" href="contact.html" aria-current="page">CONTACT</a>
+
+      <a
+        class="nav-cv"
+        href="assets/cv/faria-ahmed-oishi-cv.pdf"
+        target="_blank"
+        rel="noopener noreferrer"
+      >VIEW CV ↗</a>
+    </div>
+
+  </nav>
+</header>
 
     <!-- CONTACT DETAILS + FORM -->
     <section class="section" id="contact">
