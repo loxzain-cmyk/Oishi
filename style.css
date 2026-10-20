@@ -2107,4 +2107,90 @@ a:focus-visible {
   }
 }
 
+/* Beyond the Classroom: direct video embeds */
+.video-activity-grid .video-activity-card {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  overflow: hidden;
+}
+
+.video-activity-card .activity-video {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  height: auto;
+  border: 0;
+  background: #071A33;
+}
+
+.video-activity-card .activity-caption {
+  position: static;
+  display: block;
+  min-height: 58px;
+  padding: 14px 12px;
+  margin: 0;
+  color: #fff;
+  background: #102C50;
+  font-size: 13px;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+
+.ulabian-link-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 12px;
+  min-height: 180px;
+  padding: 22px;
+  color: inherit;
+  text-decoration: none;
+  background: linear-gradient(145deg, #102C50, #071A33);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: transform 0.25s ease, border-color 0.25s ease;
+}
+
+.ulabian-link-card:hover {
+  transform: translateY(-4px);
+  border-color: #C6A96B;
+}
+
+.ulabian-work-type {
+  color: #C6A96B;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.8px;
+}
+
+.ulabian-work-title {
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+
+.ulabian-work-link {
+  margin-top: auto;
+  color: #C6A96B;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+@media (max-width: 600px) {
+  .video-activity-card .activity-caption {
+    min-height: 0;
+    padding: 12px;
+  }
+
+  .ulabian-link-card {
+    min-height: 150px;
+    padding: 16px;
+  }
+}
+
+
 
