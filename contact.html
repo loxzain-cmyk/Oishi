@@ -1,13 +1,11 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#071A33">
-
+  <meta name="description" content="Contact Faria Ahmed Oishi for journalism, media, creative projects and professional collaborations.">
   <title>Contact | Faria Ahmed Oishi</title>
-  <meta name="description" content="Get in touch with Faria Ahmed Oishi for professional inquiries, collaborations, media projects and networking.">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,26 +13,19 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
   <style>
-    /* =========================================
-       OISHI PORTFOLIO — CONTACT PAGE
-       Premium Navy Blue / Soft Blue
-    ========================================= */
-
     :root {
       --navy: #071A33;
-      --navy-2: #0B2342;
-      --navy-3: #102C50;
+      --navy-2: #0A2142;
+      --royal: #102C50;
       --blue: #2196F3;
       --sky: #90CAF9;
-      --pale: #E3F2FD;
-      --white: #FFFFFF;
-      --muted: #AABBD0;
-      --ink: #172C45;
-      --body: #53657A;
-      --line: rgba(144, 202, 249, 0.18);
-      --glass: rgba(255, 255, 255, 0.055);
-      --shadow: 0 24px 70px rgba(0, 15, 36, 0.18);
+      --text: #F3F7FF;
+      --muted: #A8BAD2;
+      --line: rgba(144, 202, 249, .18);
+      --glass: rgba(255, 255, 255, .045);
+      --glass-hover: rgba(144, 202, 249, .09);
       --radius: 22px;
+      --shadow: 0 20px 60px rgba(0, 0, 0, .22);
     }
 
     * {
@@ -45,19 +36,29 @@
 
     html {
       scroll-behavior: smooth;
-      scroll-padding-top: 95px;
+      scroll-padding-top: 100px;
     }
 
     body {
+      background:
+        radial-gradient(ellipse at 12% 12%, rgba(33, 150, 243, .13), transparent 35%),
+        radial-gradient(ellipse at 88% 55%, rgba(16, 44, 80, .5), transparent 40%),
+        var(--navy);
+      color: var(--text);
       font-family: "DM Sans", sans-serif;
-      color: var(--ink);
-      background: #F4F8FC;
       line-height: 1.7;
       overflow-x: hidden;
     }
 
-    body, button, input, textarea {
-      font-family: "DM Sans", sans-serif;
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      pointer-events: none;
+      opacity: .19;
+      background-image: radial-gradient(rgba(144, 202, 249, .5) .7px, transparent .7px);
+      background-size: 28px 28px;
     }
 
     a {
@@ -73,90 +74,33 @@
       -webkit-tap-highlight-color: transparent;
     }
 
-    button:focus-visible,
-    a:focus-visible,
-    input:focus-visible,
-    textarea:focus-visible {
-      outline: 3px solid var(--blue);
-      outline-offset: 4px;
-    }
-
     .container {
       width: min(1160px, calc(100% - 44px));
       margin-inline: auto;
     }
 
-    .section {
-      padding: 100px 0;
-    }
-
-    .section-heading {
-      max-width: 670px;
-      margin-bottom: 45px;
-    }
-
-    .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      margin-bottom: 17px;
-      color: #1674BD;
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 2.7px;
-      text-transform: uppercase;
-    }
-
-    .eyebrow::before {
-      content: "";
-      width: 28px;
-      height: 2px;
-      background: currentColor;
-    }
-
-    h1, h2, h3 {
-      font-family: "Playfair Display", Georgia, serif;
-      line-height: 1.18;
-      font-weight: 600;
-    }
-
-    .section-heading h2 {
-      font-size: clamp(34px, 4vw, 49px);
-      letter-spacing: -1.1px;
-      margin-bottom: 17px;
-    }
-
-    .section-heading p {
-      color: var(--body);
-      font-size: 15px;
-      max-width: 570px;
-    }
-
-    /* NAVIGATION */
-
     .site-header {
       position: sticky;
       top: 0;
       z-index: 1000;
-      background: rgba(7, 26, 51, 0.95);
+      background: rgba(7, 26, 51, .83);
       backdrop-filter: blur(18px);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      -webkit-backdrop-filter: blur(18px);
+      border-bottom: 1px solid var(--line);
     }
 
     .navbar {
-      min-height: 78px;
+      min-height: 82px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 25px;
+      gap: 24px;
     }
 
     .brand {
-      color: var(--white);
-      font-family: "Playfair Display", Georgia, serif;
-      font-size: 27px;
+      font-size: 1.3rem;
       font-weight: 700;
-      letter-spacing: 1px;
+      letter-spacing: 1.5px;
       white-space: nowrap;
     }
 
@@ -172,8 +116,8 @@
     }
 
     .nav-links a {
-      color: #D6E1EE;
-      font-size: 13px;
+      color: var(--muted);
+      font-size: .91rem;
       font-weight: 600;
       transition: color .25s ease;
     }
@@ -183,17 +127,18 @@
       color: var(--sky);
     }
 
-    .nav-links .nav-contact {
+    .nav-cta {
       padding: 11px 19px;
-      border: 1px solid rgba(144, 202, 249, .55);
+      border: 1px solid rgba(144, 202, 249, .45);
       border-radius: 999px;
-      color: var(--white);
+      color: var(--sky) !important;
+      transition: background .25s, color .25s, transform .25s;
     }
 
-    .nav-links .nav-contact:hover {
+    .nav-cta:hover {
       background: var(--sky);
-      border-color: var(--sky);
-      color: var(--navy);
+      color: var(--navy) !important;
+      transform: translateY(-2px);
     }
 
     .menu-toggle {
@@ -202,108 +147,105 @@
       height: 44px;
       border: 1px solid var(--line);
       border-radius: 12px;
-      color: var(--white);
-      background: transparent;
-      font-size: 19px;
+      background: var(--glass);
+      color: white;
+      font-size: 1.2rem;
       cursor: pointer;
     }
 
-    /* HERO */
-
-    .contact-hero {
+    .hero {
       position: relative;
-      isolation: isolate;
+      padding: 105px 0 92px;
       overflow: hidden;
-      color: var(--white);
-      background:
-        radial-gradient(ellipse at 85% 15%, rgba(33, 150, 243, .19), transparent 35%),
-        radial-gradient(ellipse at 8% 100%, rgba(144, 202, 249, .09), transparent 35%),
-        linear-gradient(125deg, #06152B 0%, #0A2343 55%, #0D2D52 100%);
+      border-bottom: 1px solid var(--line);
     }
 
-    .contact-hero::before,
-    .contact-hero::after {
+    .hero::before {
       content: "";
       position: absolute;
-      z-index: -1;
-      border: 1px solid rgba(144, 202, 249, .12);
+      width: 430px;
+      height: 430px;
+      right: -100px;
+      top: -170px;
       border-radius: 50%;
+      background: rgba(33, 150, 243, .14);
+      filter: blur(80px);
       pointer-events: none;
     }
 
-    .contact-hero::before {
-      width: 550px;
-      height: 550px;
-      right: -150px;
-      top: -250px;
-      box-shadow:
-        0 0 0 50px rgba(144, 202, 249, .025),
-        0 0 0 100px rgba(144, 202, 249, .018);
+    .hero-content {
+      position: relative;
+      max-width: 800px;
     }
 
-    .contact-hero::after {
-      width: 320px;
-      height: 320px;
-      right: 11%;
-      bottom: -235px;
-    }
-
-    .hero-inner {
-      min-height: 475px;
-      padding-block: 100px 95px;
-      display: grid;
-      grid-template-columns: 1.35fr .65fr;
+    .eyebrow {
+      display: inline-flex;
       align-items: center;
-      gap: 65px;
-    }
-
-    .hero-copy {
-      max-width: 720px;
-    }
-
-    .hero-copy .eyebrow {
+      gap: 10px;
       color: var(--sky);
+      font-size: .78rem;
+      font-weight: 700;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      margin-bottom: 22px;
     }
 
-    .hero-copy h1 {
-      font-size: clamp(48px, 6.5vw, 79px);
-      letter-spacing: -2.1px;
+    .eyebrow::before {
+      content: "";
+      width: 32px;
+      height: 2px;
+      background: var(--blue);
+      box-shadow: 0 0 14px rgba(33, 150, 243, .7);
+    }
+
+    h1, h2, h3 {
+      line-height: 1.2;
+    }
+
+    h1, .section-heading h2 {
+      font-family: "Playfair Display", serif;
+    }
+
+    h1 {
+      max-width: 780px;
+      font-size: clamp(3rem, 7vw, 5.7rem);
+      letter-spacing: -2px;
+      font-weight: 600;
       margin-bottom: 24px;
     }
 
-    .hero-copy h1 span {
-      display: block;
+    h1 span {
       color: var(--sky);
+      text-shadow: 0 0 35px rgba(33, 150, 243, .24);
     }
 
-    .hero-copy > p {
-      max-width: 590px;
-      color: #C1D0E0;
-      font-size: 16px;
-      line-height: 1.95;
+    .hero-description {
+      max-width: 620px;
+      color: var(--muted);
+      font-size: 1.08rem;
+      line-height: 1.9;
     }
 
     .hero-actions {
       display: flex;
       flex-wrap: wrap;
-      align-items: center;
       gap: 14px;
-      margin-top: 34px;
+      margin-top: 32px;
     }
 
     .btn {
+      min-height: 50px;
       display: inline-flex;
       align-items: center;
       justify-content: center;
       gap: 10px;
-      min-height: 49px;
-      padding: 12px 22px;
+      padding: 13px 22px;
       border: 1px solid transparent;
-      border-radius: 999px;
-      font-size: 13px;
+      border-radius: 12px;
+      font-size: .92rem;
       font-weight: 700;
-      transition: transform .25s ease, background .25s ease, border-color .25s ease;
       cursor: pointer;
+      transition: transform .25s, box-shadow .25s, background .25s;
     }
 
     .btn:hover {
@@ -311,717 +253,424 @@
     }
 
     .btn-primary {
-      color: var(--navy);
-      background: var(--sky);
+      color: #06162B;
+      background: linear-gradient(135deg, #90CAF9, #42A5F5);
+      box-shadow: 0 10px 28px rgba(33, 150, 243, .2);
     }
 
     .btn-primary:hover {
-      background: var(--white);
+      box-shadow: 0 15px 35px rgba(33, 150, 243, .32);
     }
 
-    .btn-outline {
-      color: var(--white);
-      border-color: rgba(255, 255, 255, .3);
-      background: rgba(255, 255, 255, .035);
+    .btn-secondary {
+      color: var(--text);
+      background: var(--glass);
+      border-color: var(--line);
     }
 
-    .btn-outline:hover {
-      border-color: var(--sky);
-      background: rgba(144, 202, 249, .1);
+    .section {
+      padding: 88px 0;
     }
 
-    .hero-side {
-      justify-self: end;
-      width: min(100%, 310px);
+    .section-heading {
+      max-width: 700px;
+      margin-bottom: 42px;
     }
 
-    .availability-card {
-      position: relative;
-      padding: 29px;
-      border: 1px solid rgba(255, 255, 255, .14);
-      border-radius: 24px;
-      background: linear-gradient(145deg, rgba(255,255,255,.09), rgba(255,255,255,.025));
-      box-shadow: 0 25px 80px rgba(0,0,0,.12);
-      backdrop-filter: blur(14px);
+    .section-heading h2 {
+      font-size: clamp(2.1rem, 4.5vw, 3.5rem);
+      font-weight: 600;
+      letter-spacing: -.8px;
+      margin-bottom: 16px;
     }
 
-    .availability-icon {
-      display: grid;
-      place-items: center;
-      width: 55px;
-      height: 55px;
-      margin-bottom: 24px;
-      border: 1px solid rgba(144, 202, 249, .35);
-      border-radius: 17px;
+    .section-heading h2 span {
       color: var(--sky);
-      background: rgba(144, 202, 249, .1);
-      font-size: 22px;
     }
 
-    .availability-card h3 {
-      margin-bottom: 10px;
-      font-size: 25px;
+    .section-heading p {
+      color: var(--muted);
+      font-size: 1rem;
+      line-height: 1.85;
     }
 
-    .availability-card p {
-      color: #B9C9DA;
-      font-size: 13px;
-      line-height: 1.9;
+    .contact-grid {
+      display: grid;
+      grid-template-columns: .92fr 1.08fr;
+      gap: 26px;
+      align-items: stretch;
     }
 
-    .availability-status {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      margin-top: 25px;
-      padding-top: 20px;
-      border-top: 1px solid var(--line);
-      color: #DCEAF6;
-      font-size: 12px;
+    .glass-card {
+      background: linear-gradient(145deg, rgba(255, 255, 255, .065), rgba(255, 255, 255, .025));
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
     }
-
-    .status-dot {
-      width: 8px;
-      height: 8px;
-      flex: 0 0 8px;
-      border-radius: 50%;
-      background: var(--sky);
-      box-shadow: 0 0 12px rgba(144, 202, 249, .8);
-    }
-
-    /* CONTACT DETAILS */
 
     .contact-details {
-      background: #F4F8FC;
+      padding: 32px;
     }
 
-    .details-grid {
+    .card-title {
+      font-size: 1.35rem;
+      margin-bottom: 10px;
+    }
+
+    .card-description {
+      color: var(--muted);
+      font-size: .93rem;
+      margin-bottom: 27px;
+    }
+
+    .detail-list {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
+      gap: 15px;
     }
 
     .detail-card {
-      position: relative;
-      min-height: 205px;
-      padding: 27px;
-      border: 1px solid #E0EAF4;
-      border-radius: var(--radius);
-      background: var(--white);
-      box-shadow: 0 12px 35px rgba(12, 43, 76, .035);
-      overflow: hidden;
-      transition: transform .3s ease, box-shadow .3s ease, border-color .3s ease;
-    }
-
-    .detail-card::after {
-      content: "";
-      position: absolute;
-      width: 120px;
-      height: 120px;
-      right: -65px;
-      bottom: -65px;
-      border-radius: 50%;
-      background: #EAF5FF;
-      transition: transform .35s ease;
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      padding: 18px;
+      border: 1px solid rgba(144, 202, 249, .13);
+      background: rgba(4, 17, 36, .35);
+      border-radius: 16px;
+      transition: border-color .25s, transform .25s, background .25s;
+      overflow-wrap: anywhere;
     }
 
     .detail-card:hover {
-      transform: translateY(-6px);
-      border-color: #B9D9F5;
-      box-shadow: 0 20px 45px rgba(12, 43, 76, .09);
-    }
-
-    .detail-card:hover::after {
-      transform: scale(1.45);
+      transform: translateY(-3px);
+      border-color: rgba(144, 202, 249, .4);
+      background: var(--glass-hover);
     }
 
     .detail-icon {
-      position: relative;
-      z-index: 1;
+      width: 45px;
+      height: 45px;
+      flex: 0 0 45px;
       display: grid;
       place-items: center;
-      width: 48px;
-      height: 48px;
-      margin-bottom: 19px;
-      border-radius: 15px;
-      color: #126DB3;
-      background: #E8F4FF;
-      font-size: 18px;
-    }
-
-    .detail-card h3 {
-      position: relative;
-      z-index: 1;
-      margin-bottom: 7px;
-      font-family: "DM Sans", sans-serif;
-      font-size: 16px;
-      font-weight: 700;
-    }
-
-    .detail-card p {
-      position: relative;
-      z-index: 1;
-      overflow-wrap: anywhere;
-      color: var(--body);
-      font-size: 13px;
-      line-height: 1.8;
-    }
-
-    .detail-link {
-      position: relative;
-      z-index: 1;
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      margin-top: 14px;
-      color: #116FB5;
-      font-size: 12px;
-      font-weight: 700;
-    }
-
-    .detail-link i {
-      transition: transform .2s ease;
-    }
-
-    .detail-link:hover i {
-      transform: translateX(4px);
-    }
-
-    /* MAIN CONTACT AREA */
-
-    .contact-main {
-      position: relative;
-      overflow: hidden;
-      background: var(--white);
-    }
-
-    .contact-layout {
-      display: grid;
-      grid-template-columns: .82fr 1.18fr;
-      gap: 65px;
-      align-items: start;
-    }
-
-    .contact-intro {
-      position: sticky;
-      top: 115px;
-    }
-
-    .contact-intro h2 {
-      margin-bottom: 21px;
-      font-size: clamp(35px, 4vw, 48px);
-    }
-
-    .contact-intro > p {
-      color: var(--body);
-      font-size: 14px;
-      line-height: 2;
-    }
-
-    .intro-points {
-      display: grid;
-      gap: 19px;
-      margin-top: 34px;
-    }
-
-    .intro-point {
-      display: flex;
-      align-items: flex-start;
-      gap: 14px;
-    }
-
-    .intro-point > i {
-      display: grid;
-      place-items: center;
-      width: 40px;
-      height: 40px;
-      flex: 0 0 40px;
       border-radius: 13px;
-      color: #116FB5;
-      background: #EAF5FF;
+      color: var(--sky);
+      background: rgba(33, 150, 243, .13);
+      border: 1px solid rgba(144, 202, 249, .15);
+      font-size: 1.05rem;
     }
 
-    .intro-point strong {
-      display: block;
+    .detail-label {
+      color: var(--muted);
+      font-size: .78rem;
+      font-weight: 600;
+      letter-spacing: .7px;
+      text-transform: uppercase;
       margin-bottom: 3px;
-      font-size: 13px;
     }
 
-    .intro-point span {
-      display: block;
-      color: var(--body);
-      font-size: 12px;
-      line-height: 1.8;
+    .detail-value {
+      color: var(--text);
+      font-size: .95rem;
+      font-weight: 600;
+      line-height: 1.65;
+    }
+
+    a.detail-value:hover {
+      color: var(--sky);
     }
 
     .form-card {
-      padding: 39px;
-      border: 1px solid #E1EAF3;
-      border-radius: 27px;
-      background: #F9FBFE;
-      box-shadow: var(--shadow);
+      padding: 34px;
     }
 
-    .form-heading {
-      margin-bottom: 29px;
-    }
-
-    .form-heading h3 {
-      margin-bottom: 9px;
-      font-size: 29px;
-    }
-
-    .form-heading p {
-      color: var(--body);
-      font-size: 13px;
-    }
-
-    .contact-form {
-      display: grid;
-      gap: 20px;
-    }
-
-    .form-row {
+    .form-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 17px;
+      gap: 19px;
     }
 
     .form-group {
-      display: grid;
+      display: flex;
+      flex-direction: column;
       gap: 8px;
     }
 
+    .form-group.full {
+      grid-column: 1 / -1;
+    }
+
     .form-group label {
-      color: #263B53;
-      font-size: 12px;
-      font-weight: 700;
+      color: #DCE9F8;
+      font-size: .86rem;
+      font-weight: 600;
     }
 
     .form-group input,
-    .form-group textarea {
+    .form-group textarea,
+    .form-group select {
       width: 100%;
-      border: 1px solid #D9E4EF;
+      color: var(--text);
+      background: rgba(3, 15, 33, .6);
+      border: 1px solid rgba(144, 202, 249, .2);
       border-radius: 12px;
       outline: none;
-      color: var(--ink);
-      background: var(--white);
-      font-size: 13px;
-      transition: border-color .2s ease, box-shadow .2s ease;
+      padding: 14px 15px;
+      transition: border-color .25s, box-shadow .25s, background .25s;
     }
 
-    .form-group input {
+    .form-group input,
+    .form-group select {
       min-height: 51px;
-      padding: 13px 15px;
     }
 
     .form-group textarea {
-      min-height: 150px;
-      padding: 14px 15px;
+      min-height: 145px;
       resize: vertical;
     }
 
     .form-group input::placeholder,
     .form-group textarea::placeholder {
-      color: #9BAABD;
+      color: #8298B4;
+    }
+
+    .form-group select option {
+      color: white;
+      background: var(--navy);
     }
 
     .form-group input:focus,
-    .form-group textarea:focus {
-      border-color: #64AEEB;
-      box-shadow: 0 0 0 4px rgba(33, 150, 243, .09);
-    }
-
-    .form-submit {
-      width: 100%;
-      min-height: 54px;
-      border: 0;
-      border-radius: 13px;
-      color: var(--white);
-      background: linear-gradient(110deg, #0B3159, #176FB2);
-      font-size: 13px;
-      font-weight: 700;
-      cursor: pointer;
-      transition: transform .25s ease, box-shadow .25s ease;
-    }
-
-    .form-submit:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 12px 25px rgba(14, 75, 126, .18);
-    }
-
-    .form-submit i {
-      margin-left: 9px;
+    .form-group textarea:focus,
+    .form-group select:focus {
+      border-color: var(--sky);
+      box-shadow: 0 0 0 3px rgba(33, 150, 243, .12);
+      background: rgba(3, 15, 33, .85);
     }
 
     .form-note {
-      color: #75869A;
-      text-align: center;
-      font-size: 11px;
-      line-height: 1.8;
+      color: var(--muted);
+      font-size: .8rem;
+      margin-top: 13px;
     }
 
-    /* LOCATION */
-
-    .location-section {
-      color: var(--white);
-      background:
-        radial-gradient(ellipse at 90% 0%, rgba(33,150,243,.13), transparent 35%),
-        linear-gradient(130deg, #071A33, #0D294A);
-    }
-
-    .location-layout {
-      display: grid;
-      grid-template-columns: .9fr 1.1fr;
-      align-items: center;
-      gap: 55px;
-    }
-
-    .location-copy .eyebrow {
-      color: var(--sky);
-    }
-
-    .location-copy h2 {
-      margin-bottom: 21px;
-      font-size: clamp(35px, 4vw, 49px);
-    }
-
-    .location-copy > p {
-      max-width: 470px;
-      color: #C0CDDD;
-      font-size: 14px;
-      line-height: 2;
-    }
-
-    .address-box {
-      display: flex;
-      gap: 16px;
-      align-items: flex-start;
-      margin-top: 28px;
-      padding: 21px;
-      border: 1px solid rgba(144,202,249,.2);
-      border-radius: 17px;
-      background: rgba(255,255,255,.045);
-    }
-
-    .address-box > i {
-      margin-top: 4px;
-      color: var(--sky);
-      font-size: 21px;
-    }
-
-    .address-box strong {
-      display: block;
-      margin-bottom: 5px;
-      font-size: 13px;
-    }
-
-    .address-box span {
-      display: block;
-      color: #C0CDDD;
-      font-size: 13px;
-      line-height: 1.9;
-    }
-
-    .map-card {
-      position: relative;
-      min-height: 340px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 35px;
-      border: 1px solid rgba(144,202,249,.2);
-      border-radius: 25px;
-      background:
-        linear-gradient(rgba(7,26,51,.64), rgba(7,26,51,.82)),
-        repeating-linear-gradient(0deg, transparent, transparent 37px, rgba(144,202,249,.13) 38px, transparent 39px),
-        repeating-linear-gradient(90deg, transparent, transparent 37px, rgba(144,202,249,.13) 38px, transparent 39px),
-        #102E50;
-      overflow: hidden;
-    }
-
-    .map-card::before,
-    .map-card::after {
-      content: "";
-      position: absolute;
-      width: 140%;
-      height: 1px;
-      left: -20%;
-      top: 48%;
-      background: rgba(144,202,249,.2);
-      transform: rotate(-23deg);
-    }
-
-    .map-card::after {
-      transform: rotate(32deg);
-      top: 59%;
-    }
-
-    .map-content {
-      position: relative;
-      z-index: 1;
-      width: min(100%, 310px);
-      padding: 31px 25px;
-      border: 1px solid rgba(255,255,255,.17);
-      border-radius: 20px;
-      text-align: center;
-      background: rgba(7,26,51,.87);
-      backdrop-filter: blur(10px);
-      box-shadow: 0 20px 60px rgba(0,0,0,.18);
-    }
-
-    .map-pin {
-      display: grid;
-      place-items: center;
-      width: 58px;
-      height: 58px;
-      margin: 0 auto 17px;
-      border-radius: 19px;
-      color: var(--navy);
-      background: var(--sky);
-      font-size: 22px;
-      box-shadow: 0 0 0 10px rgba(144,202,249,.1);
-    }
-
-    .map-content h3 {
-      margin-bottom: 9px;
-      font-size: 25px;
-    }
-
-    .map-content p {
-      margin-bottom: 21px;
-      color: #C0CDDD;
-      font-size: 12px;
-      line-height: 1.8;
-    }
-
-    .map-content .btn {
+    .submit-btn {
       width: 100%;
+      margin-top: 21px;
     }
-
-    /* SOCIAL CONNECTION */
 
     .social-section {
-      background: #F4F8FC;
-    }
-
-    .social-heading {
-      max-width: 690px;
-      margin: 0 auto 40px;
-      text-align: center;
-    }
-
-    .social-heading .eyebrow {
-      justify-content: center;
-    }
-
-    .social-heading h2 {
-      margin-bottom: 15px;
-      font-size: clamp(34px, 4vw, 47px);
-    }
-
-    .social-heading p {
-      color: var(--body);
-      font-size: 14px;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      background: rgba(3, 15, 33, .28);
     }
 
     .social-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
     }
 
     .social-card {
+      min-height: 150px;
       display: flex;
       align-items: center;
       gap: 17px;
-      padding: 25px;
-      border: 1px solid #E0EAF4;
-      border-radius: 19px;
-      background: var(--white);
-      transition: transform .25s ease, box-shadow .25s ease;
+      padding: 23px;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: var(--glass);
+      transition: transform .25s, background .25s, border-color .25s;
     }
 
     .social-card:hover {
       transform: translateY(-5px);
-      box-shadow: 0 18px 40px rgba(12,43,76,.08);
+      background: var(--glass-hover);
+      border-color: rgba(144, 202, 249, .4);
     }
 
     .social-icon {
+      width: 54px;
+      height: 54px;
+      flex: 0 0 54px;
       display: grid;
       place-items: center;
-      width: 53px;
-      height: 53px;
-      flex: 0 0 53px;
       border-radius: 16px;
-      color: #126DB3;
-      background: #EAF5FF;
-      font-size: 21px;
+      color: var(--sky);
+      background: rgba(33, 150, 243, .12);
+      font-size: 1.5rem;
     }
 
     .social-card h3 {
-      margin-bottom: 3px;
-      font-family: "DM Sans", sans-serif;
-      font-size: 14px;
-      font-weight: 700;
+      font-size: 1rem;
+      margin-bottom: 5px;
     }
 
     .social-card p {
-      color: var(--body);
-      font-size: 11px;
+      color: var(--muted);
+      font-size: .83rem;
       overflow-wrap: anywhere;
     }
 
     .social-arrow {
       margin-left: auto;
-      color: #6C8299;
-      font-size: 13px;
+      color: var(--sky);
+      align-self: flex-start;
     }
 
-    /* CLOSING BANNER */
-
-    .closing-section {
-      padding: 35px 0 100px;
-      background: #F4F8FC;
-    }
-
-    .closing-banner {
+    .location-card {
       position: relative;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 35px;
-      padding: 46px 50px;
-      border-radius: 25px;
-      color: var(--white);
-      background:
-        radial-gradient(circle at 95% 5%, rgba(144,202,249,.17), transparent 27%),
-        linear-gradient(115deg, #0A2240, #123D68);
+      padding: 36px;
       overflow: hidden;
     }
 
-    .closing-banner h2 {
-      margin-bottom: 10px;
-      font-size: clamp(28px, 3vw, 38px);
+    .location-card::after {
+      content: "";
+      position: absolute;
+      width: 240px;
+      height: 240px;
+      right: -75px;
+      bottom: -100px;
+      border-radius: 50%;
+      background: rgba(33, 150, 243, .1);
+      filter: blur(45px);
+      pointer-events: none;
     }
 
-    .closing-banner p {
-      max-width: 560px;
-      color: #C5D4E4;
-      font-size: 13px;
+    .location-content {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      align-items: center;
+      gap: 24px;
     }
 
-    .closing-banner .btn {
+    .location-icon {
+      width: 68px;
+      height: 68px;
+      flex: 0 0 68px;
+      display: grid;
+      place-items: center;
+      color: var(--sky);
+      background: rgba(33, 150, 243, .12);
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      font-size: 1.7rem;
+    }
+
+    .location-content h3 {
+      font-size: 1.35rem;
+      margin-bottom: 8px;
+    }
+
+    .location-content p {
+      color: var(--muted);
+      line-height: 1.8;
+    }
+
+    .location-action {
+      margin-left: auto;
       flex-shrink: 0;
     }
 
-    /* FOOTER */
-
-    .site-footer {
-      color: #C5D3E2;
-      background: #06152A;
+    .closing-section {
+      padding: 80px 0 95px;
     }
 
-    .footer-main {
-      display: grid;
-      grid-template-columns: 1.2fr .7fr 1fr;
-      gap: 55px;
-      padding: 62px 0 47px;
+    .closing-card {
+      position: relative;
+      padding: 62px 35px;
+      text-align: center;
+      overflow: hidden;
+      border-radius: 28px;
+      border: 1px solid rgba(144, 202, 249, .22);
+      background:
+        radial-gradient(ellipse at 50% 120%, rgba(33, 150, 243, .22), transparent 55%),
+        linear-gradient(135deg, rgba(16, 44, 80, .85), rgba(7, 26, 51, .95));
+      box-shadow: var(--shadow);
     }
 
-    .footer-brand {
-      margin-bottom: 15px;
-      color: var(--white);
-      font-family: "Playfair Display", Georgia, serif;
-      font-size: 27px;
-      font-weight: 700;
+    .closing-card h2 {
+      position: relative;
+      font-family: "Playfair Display", serif;
+      font-size: clamp(2rem, 4vw, 3.5rem);
+      margin-bottom: 17px;
     }
 
-    .footer-brand span {
+    .closing-card h2 span {
       color: var(--sky);
     }
 
-    .footer-about p {
-      max-width: 340px;
-      color: #9EAFBF;
-      font-size: 12px;
-      line-height: 2;
+    .closing-card p {
+      position: relative;
+      max-width: 620px;
+      margin: 0 auto;
+      color: var(--muted);
+      line-height: 1.85;
     }
 
-    .footer-column h3 {
-      margin-bottom: 19px;
-      color: var(--white);
-      font-family: "DM Sans", sans-serif;
-      font-size: 13px;
-      font-weight: 700;
+    .closing-card .btn {
+      position: relative;
+      margin-top: 27px;
+    }
+
+    .site-footer {
+      border-top: 1px solid var(--line);
+      background: rgba(3, 12, 27, .5);
+    }
+
+    .footer-inner {
+      min-height: 100px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      padding: 25px 0;
+    }
+
+    .footer-copy {
+      color: var(--muted);
+      font-size: .84rem;
+    }
+
+    .footer-copy strong {
+      color: var(--text);
     }
 
     .footer-links {
-      display: grid;
-      gap: 10px;
-      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
     }
 
     .footer-links a {
-      color: #9EAFBF;
-      font-size: 12px;
-      transition: color .2s ease;
+      color: var(--muted);
+      font-size: .85rem;
+      transition: color .2s;
     }
 
     .footer-links a:hover {
       color: var(--sky);
     }
 
-    .footer-contact-line {
-      display: flex;
-      align-items: flex-start;
-      gap: 11px;
-      margin-bottom: 13px;
-      color: #9EAFBF;
-      font-size: 12px;
-      overflow-wrap: anywhere;
-    }
-
-    .footer-contact-line i {
-      width: 16px;
-      margin-top: 5px;
-      color: var(--sky);
-    }
-
-    .footer-bottom {
-      display: flex;
-      justify-content: space-between;
-      gap: 20px;
-      padding: 21px 0;
-      border-top: 1px solid rgba(255,255,255,.09);
-      color: #8295A9;
-      font-size: 11px;
-    }
-
-    .footer-bottom a {
-      color: #BFD8EF;
-    }
-
-    /* BACK TO TOP */
-
     .back-to-top {
       position: fixed;
       right: 22px;
       bottom: 22px;
-      z-index: 100;
+      z-index: 900;
+      width: 46px;
+      height: 46px;
       display: grid;
       place-items: center;
-      width: 45px;
-      height: 45px;
-      border: 1px solid rgba(255,255,255,.2);
+      border: 1px solid rgba(144, 202, 249, .3);
       border-radius: 14px;
-      color: var(--navy);
-      background: var(--sky);
-      box-shadow: 0 10px 25px rgba(0,0,0,.13);
+      color: var(--sky);
+      background: rgba(7, 26, 51, .9);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, .2);
       opacity: 0;
       visibility: hidden;
       transform: translateY(10px);
-      transition: .25s ease;
+      transition: all .25s;
     }
 
     .back-to-top.visible {
@@ -1030,90 +679,42 @@
       transform: translateY(0);
     }
 
-    /* REVEAL ANIMATION */
-
     .reveal {
       opacity: 0;
-      transform: translateY(22px);
+      transform: translateY(24px);
       transition: opacity .7s ease, transform .7s ease;
     }
 
-    .reveal.in-view {
+    .reveal.show {
       opacity: 1;
       transform: translateY(0);
     }
 
-    .details-grid .detail-card:nth-child(2),
-    .social-grid .social-card:nth-child(2) {
-      transition-delay: .08s;
-    }
-
-    .details-grid .detail-card:nth-child(3),
-    .social-grid .social-card:nth-child(3) {
-      transition-delay: .16s;
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      *, *::before, *::after {
-        scroll-behavior: auto !important;
-        animation-duration: .01ms !important;
-        transition-duration: .01ms !important;
-      }
-
-      .reveal {
-        opacity: 1;
-        transform: none;
-      }
-    }
-
-    /* RESPONSIVE */
-
     @media (max-width: 950px) {
-      .hero-inner {
-        grid-template-columns: 1fr .65fr;
-        gap: 35px;
-      }
-
-      .hero-copy h1 {
-        font-size: clamp(45px, 6vw, 65px);
-      }
-
-      .details-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .contact-layout {
-        gap: 35px;
-      }
-
-      .form-card {
-        padding: 29px;
-      }
-
-      .location-layout {
-        gap: 35px;
+      .contact-grid {
+        grid-template-columns: 1fr;
       }
 
       .social-grid {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(2, minmax(0, 1fr));
       }
 
-      .footer-main {
-        gap: 30px;
+      .location-content {
+        flex-wrap: wrap;
+      }
+
+      .location-action {
+        margin-left: 92px;
       }
     }
 
-    @media (max-width: 720px) {
+    @media (max-width: 760px) {
       .container {
-        width: min(100% - 34px, 560px);
-      }
-
-      .section {
-        padding: 72px 0;
+        width: min(100% - 32px, 600px);
       }
 
       .navbar {
-        min-height: 70px;
+        min-height: 72px;
       }
 
       .menu-toggle {
@@ -1127,123 +728,81 @@
         left: 0;
         right: 0;
         display: none;
+        flex-direction: column;
         align-items: stretch;
         gap: 0;
-        padding: 12px 22px 22px;
-        border-bottom: 1px solid rgba(255,255,255,.1);
-        background: #071A33;
+        padding: 12px 22px 20px;
+        background: rgba(7, 26, 51, .98);
+        border-bottom: 1px solid var(--line);
       }
 
       .nav-links.open {
         display: flex;
-        flex-direction: column;
       }
 
-      .nav-links li {
-        width: 100%;
-      }
-
-      .nav-links a {
+      .nav-links li a {
         display: block;
         padding: 13px 5px;
       }
 
-      .nav-links .nav-contact {
-        display: inline-flex;
-        padding: 9px 16px;
+      .nav-cta {
+        text-align: center;
         margin-top: 7px;
       }
 
-      .hero-inner {
-        min-height: auto;
-        padding-block: 78px 65px;
-        grid-template-columns: 1fr;
-        gap: 40px;
+      .hero {
+        padding: 78px 0 70px;
       }
 
-      .hero-copy h1 {
-        font-size: clamp(45px, 11vw, 66px);
+      h1 {
+        letter-spacing: -1.3px;
       }
 
-      .hero-copy > p {
-        font-size: 14px;
+      .section {
+        padding: 65px 0;
       }
 
-      .hero-side {
-        justify-self: stretch;
-        width: 100%;
-      }
-
-      .availability-card {
-        padding: 25px;
-      }
-
-      .details-grid {
-        grid-template-columns: 1fr;
-        gap: 15px;
-      }
-
-      .detail-card {
-        min-height: auto;
-      }
-
-      .contact-layout,
-      .location-layout {
-        grid-template-columns: 1fr;
-        gap: 40px;
-      }
-
-      .contact-intro {
-        position: static;
-      }
-
+      .contact-details,
       .form-card {
-        padding: 25px 20px;
-        border-radius: 21px;
-      }
-
-      .form-row {
-        grid-template-columns: 1fr;
-        gap: 19px;
-      }
-
-      .map-card {
-        min-height: 315px;
+        padding: 24px;
       }
 
       .social-grid {
         grid-template-columns: 1fr;
       }
 
-      .closing-section {
-        padding: 10px 0 72px;
+      .social-card {
+        min-height: 112px;
       }
 
-      .closing-banner {
+      .location-card {
+        padding: 25px;
+      }
+
+      .location-content {
+        align-items: flex-start;
+      }
+
+      .location-action {
+        margin-left: 0;
+      }
+
+      .footer-inner {
         align-items: flex-start;
         flex-direction: column;
-        padding: 32px 25px;
       }
 
-      .footer-main {
-        grid-template-columns: 1fr;
-        gap: 32px;
-        padding: 48px 0 35px;
-      }
-
-      .footer-bottom {
-        flex-direction: column;
-        gap: 8px;
+      .closing-card {
+        padding: 46px 24px;
       }
     }
 
-    @media (max-width: 380px) {
+    @media (max-width: 480px) {
       .container {
         width: calc(100% - 28px);
       }
 
       .hero-actions {
-        align-items: stretch;
         flex-direction: column;
       }
 
@@ -1251,382 +810,263 @@
         width: 100%;
       }
 
-      .form-card {
-        padding: 22px 15px;
+      .form-grid {
+        grid-template-columns: 1fr;
       }
 
-      .social-card {
-        padding: 19px 15px;
+      .form-group.full {
+        grid-column: auto;
+      }
+
+      .contact-details,
+      .form-card {
+        padding: 19px;
+      }
+
+      .detail-card {
+        padding: 14px;
         gap: 12px;
       }
 
-      .social-icon {
-        width: 45px;
-        height: 45px;
-        flex-basis: 45px;
+      .detail-icon {
+        width: 40px;
+        height: 40px;
+        flex-basis: 40px;
+      }
+
+      .location-icon {
+        width: 54px;
+        height: 54px;
+        flex-basis: 54px;
+        font-size: 1.35rem;
+      }
+
+      .location-content h3 {
+        font-size: 1.15rem;
+      }
+
+      .back-to-top {
+        right: 14px;
+        bottom: 14px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        scroll-behavior: auto !important;
+        transition-duration: .01ms !important;
+        animation-duration: .01ms !important;
+      }
+
+      .reveal {
+        opacity: 1;
+        transform: none;
       }
     }
   </style>
 </head>
 
 <body>
-
   <!-- NAVIGATION -->
   <header class="site-header" id="top">
     <nav class="navbar container" aria-label="Main navigation">
-      <a class="brand" href="index.html" aria-label="Oishi home">
-        OISHI<span>.</span>
-      </a>
+      <a class="brand" href="index.html" aria-label="Oishi home">OISHI<span>.</span></a>
 
-      <button
-        class="menu-toggle"
-        id="menuToggle"
-        aria-label="Toggle navigation"
-        aria-expanded="false"
-        aria-controls="navLinks"
-        type="button">
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation" aria-expanded="false">
         <i class="fa-solid fa-bars"></i>
       </button>
 
       <ul class="nav-links" id="navLinks">
-        <li><a href="index.html#home">Home</a></li>
+        <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About</a></li>
+        <li><a href="portfolio.html">Portfolio</a></li>
         <li><a href="activities.html">Activities</a></li>
-        <li><a href="index.html#projects">Projects</a></li>
-        <li><a href="index.html#experience">Experience</a></li>
-        <li><a class="nav-contact active" href="contact.html" aria-current="page">Contact Me</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
+        <li><a href="mailto:fariaahmedoishi@gmail.com" class="nav-cta">Let's Connect <i class="fa-solid fa-arrow-up-right-from-square"></i></a></li>
       </ul>
     </nav>
   </header>
 
   <main>
-
     <!-- HERO -->
-    <section class="contact-hero">
-      <div class="container hero-inner">
-
-        <div class="hero-copy">
-          <span class="eyebrow">Contact & Collaboration</span>
-          <h1>
-            Let's Start a
-            <span>Conversation.</span>
-          </h1>
-          <p>
-            Every meaningful opportunity starts with a conversation.
-            Whether you have a professional inquiry, a creative idea,
-            or a collaboration in mind, I'd be happy to connect with you.
+    <section class="hero">
+      <div class="container">
+        <div class="hero-content reveal">
+          <div class="eyebrow">Contact & Collaboration</div>
+          <h1>Let's Start a <span>Conversation.</span></h1>
+          <p class="hero-description">
+            Have a project in mind, a story to share, or an opportunity to discuss?
+            I'd love to hear from you. Let's connect and create something meaningful together.
           </p>
-
           <div class="hero-actions">
-            <a class="btn btn-primary" href="#contact-form">
+            <a href="#contact-form" class="btn btn-primary">
               Send a Message <i class="fa-solid fa-arrow-right"></i>
             </a>
-            <a class="btn btn-outline" href="tel:+8801750445537">
-              <i class="fa-solid fa-phone"></i> Call Me
+            <a href="mailto:fariaahmedoishi@gmail.com" class="btn btn-secondary">
+              <i class="fa-regular fa-envelope"></i> Email Me
             </a>
           </div>
         </div>
-
-        <aside class="hero-side">
-          <div class="availability-card">
-            <div class="availability-icon">
-              <i class="fa-regular fa-comments"></i>
-            </div>
-            <h3>Let's Connect</h3>
-            <p>
-              Open to professional networking, meaningful conversations,
-              creative collaboration and new opportunities.
-            </p>
-            <div class="availability-status">
-              <span class="status-dot"></span>
-              <span>Reach out through your preferred channel</span>
-            </div>
-          </div>
-        </aside>
-
       </div>
     </section>
 
-    <!-- CONTACT DETAILS -->
-    <section class="contact-details section" id="contact-details">
+    <!-- CONTACT DETAILS + FORM -->
+    <section class="section" id="contact">
       <div class="container">
-
         <div class="section-heading reveal">
-          <span class="eyebrow">Get in Touch</span>
-          <h2>Find the Right Way to Connect.</h2>
+          <div class="eyebrow">Get In Touch</div>
+          <h2>Every great idea starts with a <span>hello.</span></h2>
           <p>
-            Choose the contact method that works best for you.
-            My contact details and social profiles are listed below.
+            For professional inquiries, media collaborations, journalism projects,
+            or simply to connect, feel free to reach out through any of the channels below.
           </p>
         </div>
 
-        <div class="details-grid">
+        <div class="contact-grid">
+          <div class="glass-card contact-details reveal">
+            <h3 class="card-title">Contact Information</h3>
+            <p class="card-description">Choose the channel that works best for you.</p>
 
-          <article class="detail-card reveal">
-            <div class="detail-icon"><i class="fa-solid fa-phone"></i></div>
-            <h3>Phone</h3>
-            <p>01750445537</p>
-            <a class="detail-link" href="tel:+8801750445537">
-              Call Now <i class="fa-solid fa-arrow-right"></i>
-            </a>
-          </article>
+            <div class="detail-list">
+              <div class="detail-card">
+                <div class="detail-icon"><i class="fa-regular fa-envelope"></i></div>
+                <div>
+                  <div class="detail-label">Email Address</div>
+                  <a class="detail-value" href="mailto:fariaahmedoishi@gmail.com">fariaahmedoishi@gmail.com</a>
+                </div>
+              </div>
 
-          <article class="detail-card reveal">
-            <div class="detail-icon"><i class="fa-regular fa-envelope"></i></div>
-            <h3>Email Address</h3>
-            <p>fariaahmedoishi@gmail.com</p>
-            <a class="detail-link" href="mailto:fariaahmedoishi@gmail.com">
-              Send an Email <i class="fa-solid fa-arrow-right"></i>
-            </a>
-          </article>
+              <div class="detail-card">
+                <div class="detail-icon"><i class="fa-solid fa-phone"></i></div>
+                <div>
+                  <div class="detail-label">Phone Number</div>
+                  <a class="detail-value" href="tel:+8801750450537">01750450537</a>
+                </div>
+              </div>
 
-          <article class="detail-card reveal">
-            <div class="detail-icon"><i class="fa-brands fa-youtube"></i></div>
-            <h3>YouTube</h3>
-            <p>@FariaAhmedOishi</p>
-            <a class="detail-link"
-               href="https://www.youtube.com/@FariaAhmedOishi"
-               target="_blank" rel="noopener noreferrer">
-              Visit Channel <i class="fa-solid fa-arrow-right"></i>
-            </a>
-          </article>
+              <div class="detail-card">
+                <div class="detail-icon"><i class="fa-brands fa-youtube"></i></div>
+                <div>
+                  <div class="detail-label">YouTube Channel</div>
+                  <a class="detail-value" href="https://www.youtube.com/@FariaAhmedOishi" target="_blank" rel="noopener noreferrer">@FariaAhmedOishi</a>
+                </div>
+              </div>
 
-          <article class="detail-card reveal">
-            <div class="detail-icon"><i class="fa-brands fa-facebook-f"></i></div>
-            <h3>Facebook</h3>
-            <p>Faria Ahmed Oishi</p>
-            <a class="detail-link"
-               href="https://www.facebook.com/faria.ahmed.oishi.2025"
-               target="_blank" rel="noopener noreferrer">
-              View Profile <i class="fa-solid fa-arrow-right"></i>
-            </a>
-          </article>
+              <div class="detail-card">
+                <div class="detail-icon"><i class="fa-solid fa-location-dot"></i></div>
+                <div>
+                  <div class="detail-label">Location</div>
+                  <div class="detail-value">13/4, Block-C, Tajmahal Road,<br>Mohammadpur, Dhaka - 1207</div>
+                </div>
+              </div>
+            </div>
+          </div>
 
-          <article class="detail-card reveal">
-            <div class="detail-icon"><i class="fa-solid fa-location-dot"></i></div>
-            <h3>Location</h3>
-            <p>Mohammadpur, Dhaka - 1207, Bangladesh</p>
-            <a class="detail-link"
-               href="https://www.google.com/maps/search/?api=1&query=13%2F4%2C%20Block-C%2C%20Tajmahal%20Road%2C%20Mohammadpur%2C%20Dhaka%201207"
-               target="_blank" rel="noopener noreferrer">
-              View Location <i class="fa-solid fa-arrow-right"></i>
-            </a>
-          </article>
+          <div class="glass-card form-card reveal" id="contact-form">
+            <h3 class="card-title">Send Me a Message</h3>
+            <p class="card-description">Share a few details, and let's get the conversation started.</p>
 
-          <article class="detail-card reveal">
-            <div class="detail-icon"><i class="fa-regular fa-paper-plane"></i></div>
-            <h3>Professional Inquiry</h3>
-            <p>Have an idea or an opportunity to discuss? Send a message.</p>
-            <a class="detail-link" href="#contact-form">
-              Start a Conversation <i class="fa-solid fa-arrow-right"></i>
-            </a>
-          </article>
+            <form id="contactForm">
+              <div class="form-grid">
+                <div class="form-group">
+                  <label for="name">Your Name *</label>
+                  <input type="text" id="name" name="name" placeholder="Enter your name" autocomplete="name" required>
+                </div>
 
+                <div class="form-group">
+                  <label for="email">Your Email *</label>
+                  <input type="email" id="email" name="email" placeholder="you@example.com" autocomplete="email" required>
+                </div>
+
+                <div class="form-group full">
+                  <label for="subject">Subject *</label>
+                  <select id="subject" name="subject" required>
+                    <option value="" disabled selected>Select a subject</option>
+                    <option value="Professional Collaboration">Professional Collaboration</option>
+                    <option value="Journalism and Media">Journalism & Media</option>
+                    <option value="Project Inquiry">Project Inquiry</option>
+                    <option value="Event or Interview">Event or Interview</option>
+                    <option value="Other Inquiry">Other Inquiry</option>
+                  </select>
+                </div>
+
+                <div class="form-group full">
+                  <label for="message">Your Message *</label>
+                  <textarea id="message" name="message" placeholder="Tell me a little about your idea or inquiry..." required></textarea>
+                </div>
+              </div>
+
+              <button type="submit" class="btn btn-primary submit-btn">
+                <i class="fa-regular fa-paper-plane"></i> Continue with Email
+              </button>
+
+              <p class="form-note">
+                <i class="fa-solid fa-circle-info"></i>
+                This form opens your email app with your message prepared. It does not send anything automatically.
+              </p>
+            </form>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- MESSAGE FORM -->
-    <section class="contact-main section" id="contact-form">
-      <div class="container contact-layout">
-
-        <div class="contact-intro reveal">
-          <span class="eyebrow">Send a Message</span>
-          <h2>Have Something in Mind?</h2>
-          <p>
-            Use the form to prepare your message. Share a little information
-            about your inquiry, project or collaboration, and I'll be able to
-            understand what you'd like to discuss.
-          </p>
-
-          <div class="intro-points">
-            <div class="intro-point">
-              <i class="fa-regular fa-envelope"></i>
-              <div>
-                <strong>Direct Communication</strong>
-                <span>Your message will be prepared for email.</span>
-              </div>
-            </div>
-
-            <div class="intro-point">
-              <i class="fa-solid fa-handshake"></i>
-              <div>
-                <strong>Professional Opportunities</strong>
-                <span>Share ideas, proposals and collaboration requests.</span>
-              </div>
-            </div>
-
-            <div class="intro-point">
-              <i class="fa-solid fa-shield-halved"></i>
-              <div>
-                <strong>Your Information</strong>
-                <span>This page does not store form submissions on a server.</span>
-              </div>
-            </div>
-          </div>
+    <!-- SOCIAL LINKS -->
+    <section class="section social-section" id="social">
+      <div class="container">
+        <div class="section-heading reveal">
+          <div class="eyebrow">Stay Connected</div>
+          <h2>Find me <span>online.</span></h2>
+          <p>Follow my work, explore my content, and stay connected across my social platforms.</p>
         </div>
 
-        <div class="form-card reveal">
-          <div class="form-heading">
-            <h3>Write to Me</h3>
-            <p>Fill in the details below to prepare your email.</p>
-          </div>
-
-          <form class="contact-form" id="messageForm">
-
-            <div class="form-row">
-              <div class="form-group">
-                <label for="fullName">Your Name *</label>
-                <input
-                  type="text"
-                  id="fullName"
-                  name="name"
-                  placeholder="Enter your full name"
-                  autocomplete="name"
-                  required>
-              </div>
-
-              <div class="form-group">
-                <label for="email">Your Email *</label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  placeholder="you@example.com"
-                  autocomplete="email"
-                  required>
-              </div>
+        <div class="social-grid">
+          <a class="social-card reveal" href="https://www.facebook.com/faria.ahmed.oishi.2025" target="_blank" rel="noopener noreferrer">
+            <div class="social-icon"><i class="fa-brands fa-facebook-f"></i></div>
+            <div>
+              <h3>Facebook</h3>
+              <p>Connect and follow updates</p>
             </div>
+            <i class="fa-solid fa-arrow-up-right-from-square social-arrow"></i>
+          </a>
 
-            <div class="form-group">
-              <label for="subject">Subject *</label>
-              <input
-                type="text"
-                id="subject"
-                name="subject"
-                placeholder="What would you like to discuss?"
-                required>
+          <a class="social-card reveal" href="https://www.youtube.com/@FariaAhmedOishi" target="_blank" rel="noopener noreferrer">
+            <div class="social-icon"><i class="fa-brands fa-youtube"></i></div>
+            <div>
+              <h3>YouTube</h3>
+              <p>Explore videos and stories</p>
             </div>
+            <i class="fa-solid fa-arrow-up-right-from-square social-arrow"></i>
+          </a>
 
-            <div class="form-group">
-              <label for="message">Your Message *</label>
-              <textarea
-                id="message"
-                name="message"
-                placeholder="Write your message here..."
-                required></textarea>
+          <a class="social-card reveal" href="mailto:fariaahmedoishi@gmail.com">
+            <div class="social-icon"><i class="fa-regular fa-envelope"></i></div>
+            <div>
+              <h3>Email</h3>
+              <p>For direct inquiries</p>
             </div>
-
-            <button type="submit" class="form-submit">
-              Prepare Email <i class="fa-solid fa-paper-plane"></i>
-            </button>
-
-            <p class="form-note">
-              This button opens your email application with the message details.
-              Your email is not sent automatically by this website.
-            </p>
-          </form>
+            <i class="fa-solid fa-arrow-up-right-from-square social-arrow"></i>
+          </a>
         </div>
-
       </div>
     </section>
 
     <!-- LOCATION -->
-    <section class="location-section section" id="location">
-      <div class="container location-layout">
-
-        <div class="location-copy reveal">
-          <span class="eyebrow">Find My Location</span>
-          <h2>Based in Dhaka, Bangladesh.</h2>
-          <p>
-            For location-related inquiries or in-person meetings, please
-            use the address below and contact me beforehand to coordinate.
-          </p>
-
-          <div class="address-box">
-            <i class="fa-solid fa-location-dot"></i>
-            <div>
-              <strong>Contact Address</strong>
-              <span>
-                13/4, Block-C, Tajmahal Road,<br>
-                Mohammadpur, Dhaka - 1207,<br>
-                Bangladesh
-              </span>
-            </div>
-          </div>
-        </div>
-
-        <div class="map-card reveal">
-          <div class="map-content">
-            <div class="map-pin">
-              <i class="fa-solid fa-location-dot"></i>
-            </div>
-            <h3>Mohammadpur</h3>
-            <p>
-              Tajmahal Road, Block-C<br>
-              Dhaka - 1207, Bangladesh
-            </p>
-            <a
-              class="btn btn-primary"
-              href="https://www.google.com/maps/search/?api=1&query=13%2F4%2C%20Block-C%2C%20Tajmahal%20Road%2C%20Mohammadpur%2C%20Dhaka%201207"
-              target="_blank"
-              rel="noopener noreferrer">
-              <i class="fa-solid fa-map-location-dot"></i>
-              Open Google Maps
-            </a>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- SOCIAL CONNECTION -->
-    <section class="social-section section" id="social">
+    <section class="section">
       <div class="container">
-
-        <div class="social-heading reveal">
-          <span class="eyebrow">Stay Connected</span>
-          <h2>Connect Beyond This Page.</h2>
-          <p>
-            Visit my social profiles and YouTube channel to explore more
-            and stay connected.
-          </p>
-        </div>
-
-        <div class="social-grid">
-
-          <a class="social-card reveal"
-             href="https://www.youtube.com/@FariaAhmedOishi"
-             target="_blank" rel="noopener noreferrer">
-            <div class="social-icon"><i class="fa-brands fa-youtube"></i></div>
+        <div class="glass-card location-card reveal">
+          <div class="location-content">
+            <div class="location-icon"><i class="fa-solid fa-location-dot"></i></div>
             <div>
-              <h3>YouTube</h3>
-              <p>@FariaAhmedOishi</p>
+              <h3>Based in Dhaka, Bangladesh</h3>
+              <p>Mohammadpur, Dhaka - 1207</p>
+              <p>Available for professional conversations, media projects, and creative collaborations.</p>
             </div>
-            <i class="fa-solid fa-arrow-up-right-from-square social-arrow"></i>
-          </a>
-
-          <a class="social-card reveal"
-             href="https://www.facebook.com/faria.ahmed.oishi.2025"
-             target="_blank" rel="noopener noreferrer">
-            <div class="social-icon"><i class="fa-brands fa-facebook-f"></i></div>
-            <div>
-              <h3>Facebook</h3>
-              <p>Faria Ahmed Oishi</p>
+            <div class="location-action">
+              <a class="btn btn-secondary" href="https://www.google.com/maps/search/?api=1&query=13%2F4%2C+Block-C%2C+Tajmahal+Road%2C+Mohammadpur%2C+Dhaka+1207" target="_blank" rel="noopener noreferrer">
+                <i class="fa-solid fa-map-location-dot"></i> View Location
+              </a>
             </div>
-            <i class="fa-solid fa-arrow-up-right-from-square social-arrow"></i>
-          </a>
-
-          <a class="social-card reveal"
-             href="mailto:fariaahmedoishi@gmail.com">
-            <div class="social-icon"><i class="fa-regular fa-envelope"></i></div>
-            <div>
-              <h3>Email</h3>
-              <p>Get in touch directly</p>
-            </div>
-            <i class="fa-solid fa-arrow-up-right-from-square social-arrow"></i>
-          </a>
-
+          </div>
         </div>
       </div>
     </section>
@@ -1634,96 +1074,48 @@
     <!-- CLOSING CTA -->
     <section class="closing-section">
       <div class="container">
-        <div class="closing-banner reveal">
-          <div>
-            <h2>Every Great Connection Starts Here.</h2>
-            <p>
-              Have a question, an idea or a professional opportunity?
-              Feel free to reach out and start the conversation.
-            </p>
-          </div>
-          <a class="btn btn-primary" href="mailto:fariaahmedoishi@gmail.com">
+        <div class="closing-card reveal">
+          <div class="eyebrow">Let's Work Together</div>
+          <h2>Have something <span>in mind?</span></h2>
+          <p>
+            Whether it's a story, a collaboration, or a new opportunity,
+            I'm always open to meaningful conversations. Let's make it happen.
+          </p>
+          <a href="mailto:fariaahmedoishi@gmail.com" class="btn btn-primary">
             Get in Touch <i class="fa-solid fa-arrow-right"></i>
           </a>
         </div>
       </div>
     </section>
-
   </main>
 
   <!-- FOOTER -->
   <footer class="site-footer">
-    <div class="container">
-
-      <div class="footer-main">
-
-        <div class="footer-about">
-          <a class="footer-brand" href="index.html">OISHI<span>.</span></a>
-          <p>
-            A professional portfolio representing work, experiences,
-            creative interests and opportunities for meaningful collaboration.
-          </p>
-        </div>
-
-        <div class="footer-column">
-          <h3>Quick Links</h3>
-          <ul class="footer-links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="activities.html">Activities</a></li>
-            <li><a href="index.html#projects">Projects</a></li>
-            <li><a href="contact.html">Contact</a></li>
-          </ul>
-        </div>
-
-        <div class="footer-column">
-          <h3>Contact Information</h3>
-
-          <a class="footer-contact-line" href="tel:+8801750445537">
-            <i class="fa-solid fa-phone"></i>
-            <span>01750445537</span>
-          </a>
-
-          <a class="footer-contact-line" href="mailto:fariaahmedoishi@gmail.com">
-            <i class="fa-regular fa-envelope"></i>
-            <span>fariaahmedoishi@gmail.com</span>
-          </a>
-
-          <div class="footer-contact-line">
-            <i class="fa-solid fa-location-dot"></i>
-            <span>Mohammadpur, Dhaka - 1207, Bangladesh</span>
-          </div>
-
-          <a class="footer-contact-line"
-             href="https://www.youtube.com/@FariaAhmedOishi"
-             target="_blank" rel="noopener noreferrer">
-            <i class="fa-brands fa-youtube"></i>
-            <span>YouTube Channel</span>
-          </a>
-        </div>
-
+    <div class="container footer-inner">
+      <div class="footer-copy">
+        © <span id="year"></span> <strong>Faria Ahmed Oishi</strong>. All rights reserved.
       </div>
-
-      <div class="footer-bottom">
-        <p>© <span id="currentYear"></span> Faria Ahmed Oishi. All rights reserved.</p>
-        <a href="#top">Back to top ↑</a>
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="activities.html">Activities</a>
+        <a href="#top">Back to Top ↑</a>
       </div>
-
     </div>
   </footer>
 
-  <a class="back-to-top" id="backToTop" href="#top" aria-label="Back to top">
+  <a href="#top" class="back-to-top" id="backToTop" aria-label="Back to top">
     <i class="fa-solid fa-arrow-up"></i>
   </a>
 
   <script>
-    /* MOBILE NAVIGATION */
+    // Mobile navigation
     const menuToggle = document.getElementById("menuToggle");
     const navLinks = document.getElementById("navLinks");
 
     menuToggle.addEventListener("click", () => {
       const isOpen = navLinks.classList.toggle("open");
-
       menuToggle.setAttribute("aria-expanded", String(isOpen));
       menuToggle.innerHTML = isOpen
         ? '<i class="fa-solid fa-xmark"></i>'
@@ -1738,67 +1130,59 @@
       });
     });
 
-    /* CONTACT FORM — PREPARE AN EMAIL */
-    const messageForm = document.getElementById("messageForm");
+    // Reveal animations
+    const revealElements = document.querySelectorAll(".reveal");
 
-    messageForm.addEventListener("submit", function(event) {
+    if ("IntersectionObserver" in window) {
+      const observer = new IntersectionObserver((entries, currentObserver) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("show");
+            currentObserver.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12 });
+
+      revealElements.forEach(element => observer.observe(element));
+    } else {
+      revealElements.forEach(element => element.classList.add("show"));
+    }
+
+    // Back-to-top button
+    const backToTop = document.getElementById("backToTop");
+
+    window.addEventListener("scroll", () => {
+      backToTop.classList.toggle("visible", window.scrollY > 450);
+    }, { passive: true });
+
+    // Footer year
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Email form: prepares an email draft; does not submit to a server
+    document.getElementById("contactForm").addEventListener("submit", function(event) {
       event.preventDefault();
 
-      if (!messageForm.reportValidity()) return;
-
-      const name = document.getElementById("fullName").value.trim();
+      const name = document.getElementById("name").value.trim();
       const email = document.getElementById("email").value.trim();
-      const subject = document.getElementById("subject").value.trim();
+      const subject = document.getElementById("subject").value;
       const message = document.getElementById("message").value.trim();
 
-      const emailSubject = encodeURIComponent(subject);
+      if (!name || !email || !subject || !message) {
+        alert("Please complete all required fields.");
+        return;
+      }
+
+      const emailSubject = encodeURIComponent(subject + " — " + name);
       const emailBody = encodeURIComponent(
         "Name: " + name + "\n" +
         "Email: " + email + "\n\n" +
         "Message:\n" + message
       );
 
-      const mailtoLink =
-        "mailto:fariaahmedoishi@gmail.com" +
-        "?subject=" + emailSubject +
+      window.location.href =
+        "mailto:fariaahmedoishi@gmail.com?subject=" + emailSubject +
         "&body=" + emailBody;
-
-      window.location.href = mailtoLink;
     });
-
-    /* CURRENT YEAR */
-    document.getElementById("currentYear").textContent =
-      new Date().getFullYear();
-
-    /* SCROLL REVEAL */
-    const revealElements = document.querySelectorAll(".reveal");
-
-    if ("IntersectionObserver" in window) {
-      const revealObserver = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("in-view");
-            observer.unobserve(entry.target);
-          }
-        });
-      }, {
-        threshold: 0.12,
-        rootMargin: "0px 0px -30px 0px"
-      });
-
-      revealElements.forEach(element => revealObserver.observe(element));
-    } else {
-      revealElements.forEach(element => element.classList.add("in-view"));
-    }
-
-    /* BACK TO TOP */
-    const backToTop = document.getElementById("backToTop");
-
-    window.addEventListener("scroll", () => {
-      backToTop.classList.toggle("visible", window.scrollY > 450);
-    }, { passive: true });
   </script>
-
 </body>
 </html>
-
