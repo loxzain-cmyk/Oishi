@@ -153,34 +153,99 @@ P.tv
   .map((project, index) => videoCard(project, index, "ULAB TV"))
   .join("");
 
-/* THE ULABIAN
-   First row: two poems together.
-   Remaining rows: two posters per row, alternating layout. */
-const poemProjects = P.ulabian.filter(project => project[2] === "Poem");
-const posterProjects = P.ulabian.filter(project => project[2] === "Poster");
 
-document.querySelector("#ulabianGrid").innerHTML = `
-  <div class="ulabian-poems">
-    <div class="editorial-row">
-      ${poemProjects.map((project, index) =>
-        editorialPoster(project, index, "The ULABian", "POEM")
-      ).join("")}
+/* THE ULABIAN — Text-based editorial boxes */
+
+const ulabianGrid = document.querySelector("#ulabianGrid");
+
+const poemProjects = P.ulabian.filter(
+  project => project[2] === "Poem"
+);
+
+const posterProjects = P.ulabian.filter(
+  project => project[2] === "Poster"
+);
+
+function ulabianTextBox(project, index, category) {
+  const [title, url] = project;
+
+  const poem = category === "POEM";
+
+  const description = poem
+    ? "A literary piece exploring ideas, emotions and reflection."
+    : "A visual communication project celebrating literature, culture and meaningful occasions.";
+
+  return `
+    <article class="ulabian-editorial-card ${index % 2 ? "reverse" : ""}">
+      <div class="ulabian-visual">
+        <span class="ulabian-index">
+          ${category} / ${String(index + 1).padStart(2, "0")}
+        </span>
+
+        <h3 class="ulabian-visual-title">${esc(title)}</h3>
+
+        <span class="ulabian-visual-meta">
+          THE ULABIAN · ${category}
+        </span>
+      </div>
+
+      <div class="ulabian-details">
+        <p class="type">${category} · ${String(index + 1).padStart(2, "0")}</p>
+        <h3>${esc(title)}</h3>
+        <p>${description}</p>
+
+        <a href="${url}" target="_blank" rel="noopener noreferrer">
+          ${poem ? "READ POEM ↗" : "VIEW ORIGINAL POST ↗"}
+        </a>
+      </div>
+    </article>
+  `;
+}
+
+function ulabianRows(projects, category) {
+  const rows = [];
+
+  for (let i = 0; i < projects.length; i += 2) {
+    rows.push(`
+      <div class="ulabian-editorial-row">
+        ${projects.slice(i, i + 2).map((project, j) =>
+          ulabianTextBox(project, i + j, category)
+        ).join("")}
+      </div>
+    `);
+  }
+
+  return rows.join("");
+}
+
+ulabianGrid.classList.remove("grid", "four");
+ulabianGrid.classList.add("ulabian-content");
+
+ulabianGrid.innerHTML = `
+  <section class="ulabian-poem-section">
+    <div class="ulabian-section-heading">
+      <p class="kicker">LITERATURE / POETRY</p>
+      <h3>Words that <em>stay.</em></h3>
+      <p>Poetry and literary expressions published by The ULABian.</p>
     </div>
-  </div>
 
-  <div class="poster-heading">
-    <p class="kicker">VISUAL STORIES / POSTER COLLECTION</p>
-    <h3>Posters with <em>purpose.</em></h3>
-    <p class="poster-intro">
-      Literature, culture and meaningful moments told through visual design.
-    </p>
-    <span class="poster-count">${posterProjects.length} POSTER PROJECTS</span>
-  </div>
+    ${ulabianRows(poemProjects, "POEM")}
+  </section>
 
-  <div class="ulabian-posters editorial-grid">
-    ${renderEditorialRows(posterProjects, "The ULABian", "POSTER", 0)}
-  </div>
+  <section class="ulabian-poster-section">
+    <div class="ulabian-section-heading">
+      <p class="kicker">VISUAL STORIES / POSTER COLLECTION</p>
+      <h3>Ideas Made <em>Visible.</em></h3>
+      <p>Literature, culture and meaningful moments told through visual design.</p>
+      <span class="ulabian-count">
+        ${posterProjects.length} PROJECTS
+      </span>
+    </div>
+
+    ${ulabianRows(posterProjects, "POSTER")}
+  </section>
 `;
+
 
 /* CETL ULAB — videos */
 document.querySelector("#cetlVideoGrid").innerHTML =
