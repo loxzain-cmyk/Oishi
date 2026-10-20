@@ -2335,5 +2335,41 @@ a:focus-visible {
   }
 }
 
+/* Home page: four balanced ULABian cards */
+.ulabian-home-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+  align-items: stretch;
+}
+
+.ulabian-home-grid .ulabian-link-card {
+  min-width: 0;
+  min-height: 190px;
+  padding: 20px 16px;
+  border-radius: 8px;
+}
+
+.ulabian-home-grid .ulabian-work-title {
+  font-size: 15px;
+  line-height: 1.55;
+}
+
+@media (max-width: 768px) {
+  .ulabian-home-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 480px) {
+  .ulabian-home-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .ulabian-home-grid .ulabian-link-card {
+    min-height: 145px;
+  }
+}
+
 
 
