@@ -2611,3 +2611,90 @@ a:focus-visible {
 }
 
 
+/* ================================
+   SIMPLE TEXT & BUTTON ANIMATIONS
+================================ */
+
+/* Text reveal */
+@keyframes textReveal {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Hero text */
+.hero-eyebrow,
+.hero-title,
+.hero-description,
+.hero-actions,
+.hero-caption {
+  animation: textReveal 0.7s ease-out both;
+}
+
+.hero-title {
+  animation-delay: 0.1s;
+}
+
+.hero-description {
+  animation-delay: 0.2s;
+}
+
+.hero-actions {
+  animation-delay: 0.3s;
+}
+
+/* Buttons */
+.button,
+.nav-cv,
+button {
+  transition:
+    transform 0.25s ease,
+    background-color 0.25s ease,
+    color 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.button:hover,
+.nav-cv:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 7px 20px rgba(201, 165, 92, 0.18);
+}
+
+button:hover {
+  transform: translateY(-2px);
+}
+
+/* Text links */
+.text-link,
+.nav-link,
+.project-link {
+  transition: color 0.25s ease;
+}
+
+/* Keyboard accessibility */
+.button:focus-visible,
+.nav-cv:focus-visible,
+.nav-link:focus-visible,
+.text-link:focus-visible {
+  outline: 2px solid #C9A55C;
+  outline-offset: 4px;
+}
+
+/* Respect reduced-motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
