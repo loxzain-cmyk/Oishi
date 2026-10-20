@@ -2027,4 +2027,34 @@ a:focus-visible {
   }
 }
 
+/* Beyond the Classroom: one group per row */
+#experiences .experience-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 32px;
+  align-items: start;
+}
+
+#experiences .experience-group {
+  width: 100%;
+  min-width: 0;
+}
+
+#experiences .activity-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+
+#experiences .activity-card {
+  aspect-ratio: 16 / 9;
+}
+
+@media (max-width: 600px) {
+  #experiences .activity-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+}
+
 
