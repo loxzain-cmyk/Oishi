@@ -1704,3 +1704,34 @@ a:focus-visible {
   }
 }
 
+/* ULAB Banner — Responsive Image Sizing */
+.ulab-banner {
+  width: 100%;
+  height: 280px;
+  overflow: hidden;
+  border-radius: 14px;
+  position: relative;
+}
+
+.ulab-banner img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+@media (max-width: 768px) {
+  .ulab-banner {
+    height: 200px;
+    border-radius: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .ulab-banner {
+    height: 155px;
+  }
+}
+
+
