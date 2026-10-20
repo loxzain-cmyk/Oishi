@@ -318,19 +318,3 @@ document.addEventListener("DOMContentLoaded", () => {
 
 });
 
-.hero-highlight.headline-change {
-  animation: headline-swap 0.65s cubic-bezier(.2, .75, .25, 1) both;
-}
-
-@keyframes headline-swap {
-  from {
-    opacity: 0;
-    filter: blur(7px);
-    transform: translateY(12px);
-  }
-  to {
-    opacity: 1;
-    filter: blur(0);
-    transform: translateY(0);
-  }
-}
