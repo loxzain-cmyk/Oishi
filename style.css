@@ -2192,5 +2192,148 @@ a:focus-visible {
   }
 }
 
+/* THE ULABIAN — Premium Editorial Cards */
+.ulabian-link-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+  align-items: stretch;
+}
+
+.ulabian-link-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 14px;
+  box-sizing: border-box;
+  width: 100%;
+  min-width: 0;
+  min-height: 180px;
+  padding: 20px;
+  overflow: hidden;
+
+  color: #f5f7fb;
+  text-decoration: none;
+  background:
+    radial-gradient(
+      circle at 100% 0%,
+      rgba(198, 169, 107, 0.13),
+      transparent 48%
+    ),
+    linear-gradient(145deg, #102C50 0%, #09182c 100%);
+
+  border: 1px solid rgba(133, 174, 205, 0.25);
+  border-radius: 8px;
+
+  transition:
+    transform 0.25s ease,
+    border-color 0.25s ease,
+    background 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.ulabian-link-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 3px;
+  height: 100%;
+  background: #C6A96B;
+  opacity: 0.75;
+  transition: opacity 0.25s ease;
+}
+
+.ulabian-link-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(198, 169, 107, 0.8);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.2);
+}
+
+.ulabian-link-card:hover::before {
+  opacity: 1;
+}
+
+.ulabian-work-type {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  color: #D9BD80;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.8px;
+  line-height: 1.4;
+}
+
+.ulabian-work-title {
+  display: block;
+  width: 100%;
+  color: #F5F7FB;
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 17px;
+  font-weight: 600;
+  line-height: 1.55;
+  overflow-wrap: anywhere;
+}
+
+.ulabian-work-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  margin-top: auto;
+  padding-top: 8px;
+  color: #D9BD80;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.3px;
+  line-height: 1.5;
+}
+
+.ulabian-link-card:focus-visible {
+  outline: 2px solid #D9BD80;
+  outline-offset: 4px;
+}
+
+@media (max-width: 768px) {
+  .ulabian-link-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+  .ulabian-link-card {
+    min-height: 170px;
+    padding: 17px;
+  }
+
+  .ulabian-work-title {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .ulabian-link-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .ulabian-link-card {
+    min-height: 145px;
+    padding: 18px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ulabian-link-card,
+  .ulabian-link-card::before {
+    transition: none;
+  }
+
+  .ulabian-link-card:hover {
+    transform: none;
+  }
+}
+
 
 
