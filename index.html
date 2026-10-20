@@ -1,147 +1,612 @@
-
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#050D1A">
-  <meta name="description" content="Faria Ahmed Oishi — Media, Journalism, Digital Storytelling and Creative Portfolio.">
-  <title>Faria Ahmed Oishi | Portfolio</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <meta name="description" content="Faria Ahmed Oishi — Media Studies and Journalism, Digital Journalism, creative media and academic portfolio.">
+  <title>Faria Ahmed Oishi | Journalism & Media Portfolio</title>
   <link rel="stylesheet" href="style.css">
-  <script src="script.js" defer></script>
 </head>
+
 <body>
   <header class="site-header">
-    <a class="brand" href="#home">FAO<span>.</span></a>
-    <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+    <a class="brand" href="#home">OISHI<span>.</span></a>
+
+    <button class="menu-toggle" id="menuToggle"
+      aria-label="Toggle navigation" aria-expanded="false">☰</button>
+
     <nav class="nav-links" id="navLinks">
       <a href="#home">Home</a>
-      <a href="#about">About Me</a>
-      <a href="#portfolio">Portfolio</a>
-      <a href="#activities">Activities</a>
+      <a href="#who-i-am">Who I Am</a>
+      <a href="#academic-work">Academic Work</a>
+      <a href="#activities">Beyond the Classroom</a>
       <a href="#contact">Contact</a>
+      <a class="nav-resume"
+         href="assets/pdf/cv/CV%20of%20Faria%20Ahmed%20Oishi%202026.pdf"
+         target="_blank" rel="noopener">View CV ↗</a>
     </nav>
-    <a class="nav-cta" href="assets/pdf/cv/CV%20of%20Faria%20Ahmed%20Oishi%202026.pdf" target="_blank" rel="noopener">View CV ↗</a>
   </header>
 
   <main>
+    <!-- HERO -->
     <section class="hero" id="home">
-      <div class="hero-image" id="heroImage"></div>
+      <div class="hero-image" id="heroImage"
+        role="img" aria-label="Faria Ahmed Oishi — journalism portfolio"></div>
       <div class="hero-shade"></div>
+
       <div class="hero-content">
-        <p class="eyebrow"><span></span> MEDIA · JOURNALISM · STORYTELLING</p>
+        <p class="eyebrow">MEDIA • JOURNALISM • STORYTELLING</p>
         <h1>Faria Ahmed<br><span>Oishi.</span></h1>
         <p class="hero-tagline">Stories that matter.<br>Perspectives that inspire.</p>
-        <p class="hero-description">Creative journalism, digital media and visual storytelling.</p>
+        <p class="hero-description">
+          Digital Journalism student exploring stories, people,
+          creativity and the impact of media.
+        </p>
+
         <div class="hero-actions">
-          <a class="button button-primary" href="#portfolio">Explore My Work <span>↗</span></a>
-          <a class="button button-outline" href="assets/pdf/cv/CV%20of%20Faria%20Ahmed%20Oishi%202026.pdf" target="_blank" rel="noopener">Download CV ↓</a>
+          <a class="button button-primary" href="#academic-work">Explore My Work ↘</a>
+          <a class="button button-outline"
+             href="assets/pdf/cv/CV%20of%20Faria%20Ahmed%20Oishi%202026.pdf"
+             target="_blank" rel="noopener">View My CV ↗</a>
         </div>
+
         <div class="slider-controls">
-          <button id="prevSlide" aria-label="Previous photo">←</button>
-          <div class="slider-dots" id="sliderDots"></div>
-          <button id="nextSlide" aria-label="Next photo">→</button>
-          <span class="slide-count" id="slideCount">01 / 05</span>
+          <button id="prevSlide" aria-label="Previous photograph">←</button>
+          <div id="sliderDots" class="slider-dots"></div>
+          <button id="nextSlide" aria-label="Next photograph">→</button>
+          <span id="slideCount">01 / 05</span>
         </div>
       </div>
-      <div class="hero-caption">CREATIVE MINDSET <span>·</span> JOURNALISTIC VISION</div>
+
+      <div class="hero-caption">CURIOUS MIND. CREATIVE PERSPECTIVE. MEANINGFUL STORIES.</div>
     </section>
 
-    <section class="intro section-wrap" id="about">
-      <div class="section-label">01 / A LITTLE INTRODUCTION</div>
-      <div class="intro-grid">
+    <!-- WHO I AM -->
+    <section class="section who-section" id="who-i-am">
+      <div class="section-heading">
+        <p class="eyebrow">01 / A LITTLE ABOUT ME</p>
+        <h2>Who <span>I Am.</span></h2>
+      </div>
+
+      <div class="who-grid">
+        <div class="portrait-frame">
+          <img
+            src="assets/images/about/oishi-formal-portrait.jpg"
+            alt="Faria Ahmed Oishi formal portrait"
+            width="1261" height="1280"
+            loading="lazy">
+          <div class="portrait-label">
+            <span>FARIA AHMED OISHI</span>
+            <span>MEDIA • JOURNALISM</span>
+          </div>
+        </div>
+
+        <div class="who-copy">
+          <p class="eyebrow">DIGITAL JOURNALISM · ULAB</p>
+          <h3>Curiosity drives me.<br><span>Stories connect us.</span></h3>
+
+          <p>
+            I am Faria Ahmed Oishi, a Media Studies and Journalism student
+            at the University of Liberal Arts Bangladesh, majoring in
+            Digital Journalism with a minor in Business Administration.
+          </p>
+
+          <p>
+            My interests span journalism, visual storytelling, creative
+            communication, digital media and collaborative projects.
+            Through academic work and extracurricular experiences, I aim
+            to communicate ideas clearly and tell stories that matter.
+          </p>
+
+          <div class="quick-facts">
+            <div><strong>12</strong><span>Current semester</span></div>
+            <div><strong>3.35</strong><span>CGPA</span></div>
+            <div><strong>Digital</strong><span>Journalism major</span></div>
+          </div>
+
+          <a class="text-link" href="about.html">Discover My Journey ↗</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ULAB BACKGROUND -->
+    <section class="ulab-banner">
+      <img
+        class="ulab-background"
+        src="assets/images/about/University-of-Liberal-Arts-Bangladesh-ULAB-1920x700.jpg"
+        alt=""
+        loading="lazy">
+      <div class="ulab-overlay"></div>
+      <div class="ulab-content">
+        <p class="eyebrow">MY ACADEMIC HOME</p>
+        <h2>Learning to see the world<br><span>from different perspectives.</span></h2>
+        <p>
+          University of Liberal Arts Bangladesh
+          <br>Media Studies and Journalism
+        </p>
+      </div>
+    </section>
+
+    <!-- SELECTED ACADEMIC WORK -->
+    <section class="section academic-section" id="academic-work">
+      <div class="section-heading section-heading-row">
         <div>
-          <p class="eyebrow">THE PERSON BEHIND THE STORIES</p>
-          <h2>Curiosity drives me.<br><span>Stories connect us.</span></h2>
+          <p class="eyebrow">02 / SELECTED ACADEMIC WORK</p>
+          <h2>Ideas into <span>impact.</span></h2>
         </div>
-        <div class="intro-copy">
-          <p>I’m Faria Ahmed Oishi, a Media Studies and Journalism student focused on digital journalism, creative communication and visual storytelling.</p>
-          <p>From newsroom experiences to multimedia projects, I explore ways to make stories meaningful, accessible and engaging.</p>
-          <a class="text-link" href="#contact">Let’s connect <span>↗</span></a>
+        <p class="section-intro">
+          A selection of academic projects exploring journalism,
+          research, communication and creative media.
+        </p>
+      </div>
+
+      <!-- MAJOR COURSE -->
+      <div class="course-group">
+        <div class="course-title">
+          <div>
+            <p class="eyebrow">DIGITAL JOURNALISM</p>
+            <h3>Major Course <span>Portfolio</span></h3>
+          </div>
+          <span class="course-count">04 SELECTED PROJECTS</span>
+        </div>
+
+        <div class="work-list">
+          <article class="work-row">
+            <a class="work-visual"
+              href="assets/pdf/major-course-portfolio/msj-3151-in-depth-report.pdf"
+              target="_blank" rel="noopener">
+              <img src="assets/images/major-course-portfolio/msj-3151-in-depth-report.jpg"
+                alt="In-depth report project" loading="lazy">
+              <span class="visual-action">VIEW PROJECT ↗</span>
+            </a>
+            <div class="work-copy">
+              <p class="eyebrow">MAJOR PROJECT / 01</p>
+              <h4>In-depth Report</h4>
+              <p>
+                An in-depth reporting project focused on investigating
+                a subject, developing context and presenting information
+                through a structured journalistic narrative.
+              </p>
+              <div class="work-actions">
+                <a class="text-link"
+                  href="assets/pdf/major-course-portfolio/msj-3151-in-depth-report.pdf"
+                  target="_blank" rel="noopener">Read PDF ↗</a>
+                <a class="text-link"
+                  href="assets/images/major-course-portfolio/msj-3151-in-depth-report.jpg"
+                  target="_blank" rel="noopener">View Image ↗</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="work-row reverse">
+            <div class="work-copy">
+              <p class="eyebrow">MAJOR PROJECT / 02</p>
+              <h4>Multimedia News Story</h4>
+              <p>
+                A multimedia storytelling project combining reporting
+                and visual communication to present a news story in
+                an engaging, accessible format.
+              </p>
+              <div class="work-actions">
+                <a class="text-link"
+                  href="assets/pdf/major-course-portfolio/msj-3152-multimedia-news-story.pdf"
+                  target="_blank" rel="noopener">Read PDF ↗</a>
+                <a class="text-link"
+                  href="assets/images/major-course-portfolio/msj-3152-multimedia-news-story.jpg"
+                  target="_blank" rel="noopener">View Image ↗</a>
+              </div>
+            </div>
+            <a class="work-visual"
+              href="assets/pdf/major-course-portfolio/msj-3152-multimedia-news-story.pdf"
+              target="_blank" rel="noopener">
+              <img src="assets/images/major-course-portfolio/msj-3152-multimedia-news-story.jpg"
+                alt="Multimedia news story project" loading="lazy">
+              <span class="visual-action">VIEW PROJECT ↗</span>
+            </a>
+          </article>
+
+          <article class="work-row">
+            <a class="work-visual"
+              href="assets/pdf/major-course-portfolio/msj-3251-mojo-project.pdf"
+              target="_blank" rel="noopener">
+              <img src="assets/images/major-course-portfolio/msj-3251-mojo-project.jpg"
+                alt="Mobile journalism project" loading="lazy">
+              <span class="visual-action">VIEW PROJECT ↗</span>
+            </a>
+            <div class="work-copy">
+              <p class="eyebrow">MAJOR PROJECT / 03</p>
+              <h4>Mobile Journalism</h4>
+              <p>
+                A mobile-first journalism project demonstrating how
+                reporting, recording and digital storytelling can
+                work together in a compact production workflow.
+              </p>
+              <div class="work-actions">
+                <a class="text-link"
+                  href="assets/pdf/major-course-portfolio/msj-3251-mojo-project.pdf"
+                  target="_blank" rel="noopener">Read PDF ↗</a>
+                <a class="text-link"
+                  href="assets/images/major-course-portfolio/msj-3251-mojo-project.jpg"
+                  target="_blank" rel="noopener">View Image ↗</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="work-row reverse">
+            <div class="work-copy">
+              <p class="eyebrow">MAJOR PROJECT / 04</p>
+              <h4>News Translation</h4>
+              <p>
+                A language-focused journalism assignment exploring
+                accurate news translation, clarity, context and
+                audience-appropriate communication.
+              </p>
+              <div class="work-actions">
+                <a class="text-link"
+                  href="assets/pdf/major-course-portfolio/msj-3252-news-translation.pdf"
+                  target="_blank" rel="noopener">Read PDF ↗</a>
+                <a class="text-link"
+                  href="assets/images/major-course-portfolio/msj-3252-news-translation.jpg"
+                  target="_blank" rel="noopener">View Image ↗</a>
+              </div>
+            </div>
+            <a class="work-visual"
+              href="assets/pdf/major-course-portfolio/msj-3252-news-translation.pdf"
+              target="_blank" rel="noopener">
+              <img src="assets/images/major-course-portfolio/msj-3252-news-translation.jpg"
+                alt="News translation project" loading="lazy">
+              <span class="visual-action">VIEW PROJECT ↗</span>
+            </a>
+          </article>
+        </div>
+
+        <div class="course-footer">
+          <a class="button button-outline" href="portfolio.html">Explore All Major Projects ↗</a>
         </div>
       </div>
-      <div class="quick-facts">
-        <div><strong>Digital</strong><span>Journalism Major</span></div>
-        <div><strong>ULAB</strong><span>Academic Journey</span></div>
-        <div><strong>Multimedia</strong><span>Creative Practice</span></div>
-      </div>
-    </section>
 
-    <section class="portfolio-section section-wrap" id="portfolio">
-      <div class="section-heading">
-        <div><p class="eyebrow">SELECTED ACADEMIC WORK</p><h2>Ideas into <span>impact.</span></h2></div>
-        <p>Research, reporting and creative work developed throughout my academic journey.</p>
-      </div>
-      <div class="project-grid">
-        <a class="project-card" href="assets/pdf/major-course-portfolio/msj-3151-in-depth-report.pdf" target="_blank" rel="noopener">
-          <img src="assets/images/major-course-portfolio/msj-3151-in-depth-report.jpg" alt="In-depth report project" loading="lazy">
-          <div class="project-meta"><span>MAJOR COURSE · 01</span><span>↗</span></div>
-          <h3>In-depth Report</h3><p>Research-led journalism</p>
-        </a>
-        <a class="project-card" href="assets/pdf/major-course-portfolio/msj-3152-multimedia-news-story.pdf" target="_blank" rel="noopener">
-          <img src="assets/images/major-course-portfolio/msj-3152-multimedia-news-story.jpg" alt="Multimedia news story project" loading="lazy">
-          <div class="project-meta"><span>MAJOR COURSE · 02</span><span>↗</span></div>
-          <h3>Multimedia News Story</h3><p>Reporting across media formats</p>
-        </a>
-        <a class="project-card" href="assets/pdf/common-course-portfolio/msj-2102-digital-art-installation.pdf" target="_blank" rel="noopener">
-          <img src="assets/images/common-course-portfolio/msj-2102-digital-art-installation.jpg" alt="Digital art installation project" loading="lazy">
-          <div class="project-meta"><span>COMMON COURSE · 03</span><span>↗</span></div>
-          <h3>Digital Art Installation</h3><p>Creative communication</p>
-        </a>
-      </div>
-      <div class="center-action"><a class="button button-outline" href="portfolio.html">Explore All Projects ↗</a></div>
-    </section>
+      <!-- COMMON COURSE -->
+      <div class="course-group common-course">
+        <div class="course-title">
+          <div>
+            <p class="eyebrow">WRITING · COMMUNICATION · CREATIVE MEDIA</p>
+            <h3>Common Course <span>Portfolio</span></h3>
+          </div>
+          <span class="course-count">04 SELECTED PROJECTS</span>
+        </div>
 
-    <section class="journey-section">
-      <div class="journey-inner section-wrap">
-        <div><p class="eyebrow">GROWTH THROUGH EXPERIENCE</p><h2>Every role adds<br><span>a new perspective.</span></h2></div>
-        <div class="journey-copy">
-          <p>From newsroom responsibilities and graphics leadership to academic support and media production, every experience contributes to my growth as a communicator.</p>
-          <a class="text-link" href="about.html">Explore my journey ↗</a>
+        <div class="work-list">
+          <article class="work-row">
+            <a class="work-visual"
+              href="assets/pdf/common-course-portfolio/msj-1201-research-proposal.pdf"
+              target="_blank" rel="noopener">
+              <img src="assets/images/common-course-portfolio/msj-1201-research-proposal.jpg"
+                alt="Research proposal project" loading="lazy">
+              <span class="visual-action">VIEW PROJECT ↗</span>
+            </a>
+            <div class="work-copy">
+              <p class="eyebrow">COMMON PROJECT / 01</p>
+              <h4>Research Proposal</h4>
+              <p>
+                A research-focused assignment developed around a
+                defined topic, research questions and a structured
+                academic approach.
+              </p>
+              <div class="work-actions">
+                <a class="text-link"
+                  href="assets/pdf/common-course-portfolio/msj-1201-research-proposal.pdf"
+                  target="_blank" rel="noopener">Read PDF ↗</a>
+                <a class="text-link"
+                  href="assets/images/common-course-portfolio/msj-1201-research-proposal.jpg"
+                  target="_blank" rel="noopener">View Image ↗</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="work-row reverse">
+            <div class="work-copy">
+              <p class="eyebrow">COMMON PROJECT / 02</p>
+              <h4>Bangla Feature</h4>
+              <p>
+                A feature-writing project focused on narrative,
+                language and presenting a subject in an engaging
+                Bangla editorial format.
+              </p>
+              <div class="work-actions">
+                <a class="text-link"
+                  href="assets/pdf/common-course-portfolio/ged-1203-bangla-feature.pdf"
+                  target="_blank" rel="noopener">Read PDF ↗</a>
+                <a class="text-link"
+                  href="assets/images/common-course-portfolio/ged-1203-bangla-feature.jpg"
+                  target="_blank" rel="noopener">View Image ↗</a>
+              </div>
+            </div>
+            <a class="work-visual"
+              href="assets/pdf/common-course-portfolio/ged-1203-bangla-feature.pdf"
+              target="_blank" rel="noopener">
+              <img src="assets/images/common-course-portfolio/ged-1203-bangla-feature.jpg"
+                alt="Bangla feature project" loading="lazy">
+              <span class="visual-action">VIEW PROJECT ↗</span>
+            </a>
+          </article>
+
+          <article class="work-row">
+            <a class="work-visual"
+              href="assets/pdf/common-course-portfolio/msj-2101-communication-technology-blog.pdf"
+              target="_blank" rel="noopener">
+              <img src="assets/images/common-course-portfolio/msj-2101-communication-technology-blog.jpg"
+                alt="Communication technology blog project" loading="lazy">
+              <span class="visual-action">VIEW PROJECT ↗</span>
+            </a>
+            <div class="work-copy">
+              <p class="eyebrow">COMMON PROJECT / 03</p>
+              <h4>Communication Technology Blog</h4>
+              <p>
+                A communication and technology project examining
+                digital media topics through a blog-style
+                presentation.
+              </p>
+              <div class="work-actions">
+                <a class="text-link"
+                  href="assets/pdf/common-course-portfolio/msj-2101-communication-technology-blog.pdf"
+                  target="_blank" rel="noopener">Read PDF ↗</a>
+                <a class="text-link"
+                  href="assets/images/common-course-portfolio/msj-2101-communication-technology-blog.jpg"
+                  target="_blank" rel="noopener">View Image ↗</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="work-row reverse">
+            <div class="work-copy">
+              <p class="eyebrow">COMMON PROJECT / 04</p>
+              <h4>Digital Art Installation</h4>
+              <p>
+                A creative media project exploring visual expression
+                and the possibilities of combining artistic ideas
+                with digital communication.
+              </p>
+              <div class="work-actions">
+                <a class="text-link"
+                  href="assets/pdf/common-course-portfolio/msj-2102-digital-art-installation.pdf"
+                  target="_blank" rel="noopener">Read PDF ↗</a>
+                <a class="text-link"
+                  href="assets/images/common-course-portfolio/msj-2102-digital-art-installation.jpg"
+                  target="_blank" rel="noopener">View Image ↗</a>
+              </div>
+            </div>
+            <a class="work-visual"
+              href="assets/pdf/common-course-portfolio/msj-2102-digital-art-installation.pdf"
+              target="_blank" rel="noopener">
+              <img src="assets/images/common-course-portfolio/msj-2102-digital-art-installation.jpg"
+                alt="Digital art installation project" loading="lazy">
+              <span class="visual-action">VIEW PROJECT ↗</span>
+            </a>
+          </article>
+        </div>
+
+        <div class="course-footer">
+          <a class="button button-outline" href="portfolio.html">Explore All Common Projects ↗</a>
         </div>
       </div>
     </section>
 
-    <section class="activities-section section-wrap" id="activities">
-      <div class="section-heading">
-        <div><p class="eyebrow">BEYOND THE CLASSROOM</p><h2>Work that brings<br><span>people together.</span></h2></div>
-        <p>Explore selected contributions across university media, journalism and teaching and learning.</p>
+    <!-- BEYOND THE CLASSROOM -->
+    <section class="section activities-section" id="activities">
+      <div class="section-heading section-heading-row">
+        <div>
+          <p class="eyebrow">03 / EXPERIENCES & COLLABORATION</p>
+          <h2>Beyond the <span>Classroom.</span></h2>
+        </div>
+        <p class="section-intro">
+          Stories, productions and experiences from university
+          media, student publications and professional learning.
+        </p>
       </div>
-      <div class="filter-tabs" role="group" aria-label="Filter activities">
-        <button class="filter-btn active" data-filter="all">All</button>
-        <button class="filter-btn" data-filter="ulab-tv">ULAB TV</button>
-        <button class="filter-btn" data-filter="ulabian">The ULABian</button>
-        <button class="filter-btn" data-filter="cetl">CETL ULAB</button>
+
+      <div class="activity-filters" role="group" aria-label="Filter activities">
+        <button class="filter-btn active" data-filter="all" aria-pressed="true">All Groups</button>
+        <button class="filter-btn" data-filter="ulab-tv" aria-pressed="false">ULAB TV</button>
+        <button class="filter-btn" data-filter="ulabian" aria-pressed="false">The ULABian</button>
+        <button class="filter-btn" data-filter="cetl" aria-pressed="false">CETL ULAB</button>
       </div>
-      <div class="activity-grid">
-        <a class="activity-card" data-category="ulab-tv" href="https://youtu.be/_oWdkHcJm3g" target="_blank" rel="noopener"><span>ULAB TV</span><h3>ULAB’s 8th Convocation</h3><p>Event coverage · Video</p><b>Watch / Explore ↗</b></a>
-        <a class="activity-card" data-category="ulab-tv" href="https://youtu.be/o3CgLhvHykY" target="_blank" rel="noopener"><span>ULAB TV</span><h3>Interview with Dr. David A. Peterson</h3><p>Interview · Video</p><b>Watch / Explore ↗</b></a>
-        <a class="activity-card" data-category="ulabian" href="https://theulabianblog.wordpress.com/2026/02/25/%e0%a6%b8%e0%a7%8d%e0%a6%ac%e0%a6%aa%e0%a7%8d%e0%a6%a8%e0%a7%87%e0%a6%b0-%e0%a6%b9%e0%a6%be%e0%a6%b9%e0%a6%be%e0%a6%95%e0%a6%be%e0%a6%b0/" target="_blank" rel="noopener"><span>THE ULABIAN</span><h3>স্বপ্নের হাহাকার</h3><p>Written feature · Article</p><b>Read Story ↗</b></a>
-        <a class="activity-card" data-category="ulabian" href="https://theulabianblog.wordpress.com/2026/02/21/%e0%a6%8f%e0%a6%95%e0%a7%81%e0%a6%b6%e0%a7%87%e0%a6%b0-%e0%a6%b6%e0%a7%8d%e0%a6%b0%e0%a6%a6%e0%a6%be%e0%a6%9e%e0%a7%8d%e0%a6%9c%e0%a6%b2%e0%a6%bf/" target="_blank" rel="noopener"><span>THE ULABIAN</span><h3>একুশের শ্রদ্ধাঞ্জলি</h3><p>Editorial writing · Article</p><b>Read Story ↗</b></a>
-        <a class="activity-card" data-category="cetl" href="https://youtube.com/shorts/cBZX8KOGTSs" target="_blank" rel="noopener"><span>CETL ULAB</span><h3>New Faculty Orientation</h3><p>Spring 2026 · Video</p><b>Watch / Explore ↗</b></a>
-        <a class="activity-card" data-category="cetl" href="https://youtube.com/shorts/teUz-dmHn6s" target="_blank" rel="noopener"><span>CETL ULAB</span><h3>Induction Training</h3><p>Teaching and learning · Video</p><b>Watch / Explore ↗</b></a>
+
+      <!-- ULAB TV -->
+      <div class="activity-group">
+        <div class="activity-group-heading">
+          <div>
+            <p class="eyebrow">MEDIA PRODUCTION</p>
+            <h3>ULAB <span>TV</span></h3>
+          </div>
+          <span>01 — 06</span>
+        </div>
+
+        <div class="activity-grid">
+          <article class="activity-card" data-category="ulab-tv">
+            <a class="activity-thumb placeholder-thumb" href="#contact"
+              aria-label="Add the first ULAB TV video link">
+              <span class="thumb-play">▶</span><span class="thumb-index">01</span>
+            </a>
+            <div class="activity-info"><p>ULAB TV</p><h4>News & Reporting</h4><span>Video feature</span></div>
+          </article>
+          <article class="activity-card" data-category="ulab-tv">
+            <a class="activity-thumb placeholder-thumb" href="#contact"
+              aria-label="Add the second ULAB TV video link">
+              <span class="thumb-play">▶</span><span class="thumb-index">02</span>
+            </a>
+            <div class="activity-info"><p>ULAB TV</p><h4>News Production</h4><span>Video feature</span></div>
+          </article>
+          <article class="activity-card" data-category="ulab-tv">
+            <a class="activity-thumb placeholder-thumb" href="#contact"
+              aria-label="Add the third ULAB TV video link">
+              <span class="thumb-play">▶</span><span class="thumb-index">03</span>
+            </a>
+            <div class="activity-info"><p>ULAB TV</p><h4>Media & Events</h4><span>Video feature</span></div>
+          </article>
+          <article class="activity-card" data-category="ulab-tv">
+            <a class="activity-thumb placeholder-thumb" href="#contact"
+              aria-label="Add the fourth ULAB TV video link">
+              <span class="thumb-play">▶</span><span class="thumb-index">04</span>
+            </a>
+            <div class="activity-info"><p>ULAB TV</p><h4>Campus Stories</h4><span>Video feature</span></div>
+          </article>
+          <article class="activity-card" data-category="ulab-tv">
+            <a class="activity-thumb placeholder-thumb" href="#contact"
+              aria-label="Add the fifth ULAB TV video link">
+              <span class="thumb-play">▶</span><span class="thumb-index">05</span>
+            </a>
+            <div class="activity-info"><p>ULAB TV</p><h4>Special Coverage</h4><span>Video feature</span></div>
+          </article>
+          <article class="activity-card" data-category="ulab-tv">
+            <a class="activity-thumb placeholder-thumb" href="#contact"
+              aria-label="Add the sixth ULAB TV video link">
+              <span class="thumb-play">▶</span><span class="thumb-index">06</span>
+            </a>
+            <div class="activity-info"><p>ULAB TV</p><h4>Visual Storytelling</h4><span>Video feature</span></div>
+          </article>
+        </div>
       </div>
-      <div class="center-action"><a class="button button-primary" href="activities.html">Explore All Activities ↗</a></div>
+
+      <!-- THE ULABIAN -->
+      <div class="activity-group">
+        <div class="activity-group-heading">
+          <div>
+            <p class="eyebrow">STUDENT PUBLICATION</p>
+            <h3>The <span>ULABian</span></h3>
+          </div>
+          <span>07 — 12</span>
+        </div>
+
+        <div class="activity-grid">
+          <article class="activity-card" data-category="ulabian">
+            <a class="activity-thumb placeholder-thumb" href="#contact">
+              <span class="thumb-play">↗</span><span class="thumb-index">07</span>
+            </a>
+            <div class="activity-info"><p>THE ULABIAN</p><h4>Creative & Graphics</h4><span>Publication</span></div>
+          </article>
+          <article class="activity-card" data-category="ulabian">
+            <a class="activity-thumb placeholder-thumb" href="#contact">
+              <span class="thumb-play">↗</span><span class="thumb-index">08</span>
+            </a>
+            <div class="activity-info"><p>THE ULABIAN</p><h4>Editorial Stories</h4><span>Publication</span></div>
+          </article>
+          <article class="activity-card" data-category="ulabian">
+            <a class="activity-thumb placeholder-thumb" href="#contact">
+              <span class="thumb-play">↗</span><span class="thumb-index">09</span>
+            </a>
+            <div class="activity-info"><p>THE ULABIAN</p><h4>Campus Features</h4><span>Publication</span></div>
+          </article>
+          <article class="activity-card" data-category="ulabian">
+            <a class="activity-thumb placeholder-thumb" href="#contact">
+              <span class="thumb-play">↗</span><span class="thumb-index">10</span>
+            </a>
+            <div class="activity-info"><p>THE ULABIAN</p><h4>Visual Communication</h4><span>Publication</span></div>
+          </article>
+          <article class="activity-card" data-category="ulabian">
+            <a class="activity-thumb placeholder-thumb" href="#contact">
+              <span class="thumb-play">↗</span><span class="thumb-index">11</span>
+            </a>
+            <div class="activity-info"><p>THE ULABIAN</p><h4>Special Features</h4><span>Publication</span></div>
+          </article>
+          <article class="activity-card" data-category="ulabian">
+            <a class="activity-thumb placeholder-thumb" href="#contact">
+              <span class="thumb-play">↗</span><span class="thumb-index">12</span>
+            </a>
+            <div class="activity-info"><p>THE ULABIAN</p><h4>Creative Projects</h4><span>Publication</span></div>
+          </article>
+        </div>
+      </div>
+
+      <!-- CETL -->
+      <div class="activity-group">
+        <div class="activity-group-heading">
+          <div>
+            <p class="eyebrow">LEARNING & DEVELOPMENT</p>
+            <h3>CETL <span>ULAB</span></h3>
+          </div>
+          <span>13 — 18</span>
+        </div>
+
+        <div class="activity-grid">
+          <article class="activity-card" data-category="cetl">
+            <a class="activity-thumb placeholder-thumb" href="#contact">
+              <span class="thumb-play">▶</span><span class="thumb-index">13</span>
+            </a>
+            <div class="activity-info"><p>CETL ULAB</p><h4>New Faculty Orientation</h4><span>Event coverage</span></div>
+          </article>
+          <article class="activity-card" data-category="cetl">
+            <a class="activity-thumb placeholder-thumb" href="#contact">
+              <span class="thumb-play">▶</span><span class="thumb-index">14</span>
+            </a>
+            <div class="activity-info"><p>CETL ULAB</p><h4>Induction Training</h4><span>Event coverage</span></div>
+          </article>
+          <article class="activity-card" data-category="cetl">
+            <a class="activity-thumb placeholder-thumb" href="#contact">
+              <span class="thumb-play">▶</span><span class="thumb-index">15</span>
+            </a>
+            <div class="activity-info"><p>CETL ULAB</p><h4>Abir Bin Yousuf</h4><span>Media feature</span></div>
+          </article>
+          <article class="activity-card" data-category="cetl">
+            <a class="activity-thumb placeholder-thumb" href="#contact">
+              <span class="thumb-play">▶</span><span class="thumb-index">16</span>
+            </a>
+            <div class="activity-info"><p>CETL ULAB</p><h4>Md. Sharafat Chowdhury</h4><span>Media feature</span></div>
+          </article>
+          <article class="activity-card" data-category="cetl">
+            <a class="activity-thumb placeholder-thumb" href="#contact">
+              <span class="thumb-play">▶</span><span class="thumb-index">17</span>
+            </a>
+            <div class="activity-info"><p>CETL ULAB</p><h4>AI in Teaching</h4><span>Learning feature</span></div>
+          </article>
+          <article class="activity-card" data-category="cetl">
+            <a class="activity-thumb placeholder-thumb" href="#contact">
+              <span class="thumb-play">▶</span><span class="thumb-index">18</span>
+            </a>
+            <div class="activity-info"><p>CETL ULAB</p><h4>Mastering Academia</h4><span>Learning feature</span></div>
+          </article>
+        </div>
+      </div>
+
+      <div class="course-footer">
+        <a class="button button-primary" href="activities.html">Explore All Activities ↗</a>
+      </div>
     </section>
 
-    <section class="contact-section section-wrap" id="contact">
-      <p class="eyebrow">HAVE A STORY OR IDEA?</p>
-      <h2>Let’s make something<br><span>meaningful.</span></h2>
-      <p class="contact-description">Open to conversations, collaborations and creative opportunities.</p>
-      <a class="button button-primary" href="mailto:fariaahmedoishi@gmail.com">Get in Touch ↗</a>
+    <!-- CONTACT -->
+    <section class="section contact-section" id="contact">
+      <p class="eyebrow">04 / LET'S CONNECT</p>
+      <h2>Every story starts<br>with a <span>conversation.</span></h2>
+      <p>
+        For journalism, media, creative projects and collaboration,
+        feel free to get in touch.
+      </p>
+
       <div class="contact-links">
-        <a href="mailto:fariaahmedoishi@gmail.com">Email</a>
-        <a href="https://www.linkedin.com/in/faria-ahmed-oishi-b103a4279" target="_blank" rel="noopener">LinkedIn</a>
-        <a href="https://www.youtube.com/@FariaAhmedOishi" target="_blank" rel="noopener">YouTube</a>
-        <a href="https://www.facebook.com/share/1Hze2ASrSm/?mibextid=wwXIfr" target="_blank" rel="noopener">Facebook</a>
-        <a href="tel:01750445537">01750445537</a>
+        <a href="mailto:fariaahmedoishi@gmail.com">fariaahmedoishi@gmail.com ↗</a>
+        <a href="tel:+8801750445537">+880 1750-445537 ↗</a>
+        <a href="https://www.linkedin.com/in/faria-ahmed-oishi-b103a4279/"
+          target="_blank" rel="noopener">LinkedIn ↗</a>
+        <a href="https://www.youtube.com/@FariaAhmedOishi"
+          target="_blank" rel="noopener">YouTube ↗</a>
+        <a href="https://www.facebook.com/share/1Hze2ASrSm/?mibextid=wwXIfr"
+          target="_blank" rel="noopener">Facebook ↗</a>
       </div>
+
+      <a class="button button-outline"
+        href="assets/pdf/cv/CV%20of%20Faria%20Ahmed%20Oishi%202026.pdf"
+        target="_blank" rel="noopener">Download My CV ↓</a>
     </section>
   </main>
 
-  <footer class="site-footer"><a class="brand" href="#home">FAO<span>.</span></a><p>Designed with intention. Built around stories.</p><span>© <span id="year"></span> Faria Ahmed Oishi</span></footer>
+  <footer class="site-footer">
+    <a class="brand" href="#home">OISHI<span>.</span></a>
+    <p>Stories that matter. Perspectives that inspire.</p>
+    <p>© <span id="year">2026</span> Faria Ahmed Oishi. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
-
+```
