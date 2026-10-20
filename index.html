@@ -1,239 +1,210 @@
-```html
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#071A33">
+
   <title>Faria Ahmed Oishi | Journalism & Creative Portfolio</title>
-  <meta name="description" content="The journalism, academic projects, media productions, creative work and experiences of Faria Ahmed Oishi.">
-  <meta name="theme-color" content="#050D1A">
+  <meta name="description" content="Explore the journalism, academic projects, media production and extracurricular experiences of Faria Ahmed Oishi.">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 
-  <!-- Layout fixes for the portfolio -->
   <style>
-    .experience-grid {
-      display: flex !important;
-      flex-direction: column !important;
-      gap: 28px !important;
+    :root {
+      --navy: #071A33;
+      --navy-light: #102C50;
+      --ice: #EAF4FF;
+      --gold: #D8BC83;
+      --muted: #A9B9CC;
     }
 
-    .experience-group {
-      width: 100% !important;
-      min-width: 0 !important;
-      box-sizing: border-box;
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--navy);
+      color: var(--ice);
     }
 
-    .activity-grid {
-      display: grid !important;
-      grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
-      gap: 14px !important;
+    img { max-width: 100%; }
+
+    .home-preview {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 22px;
+      margin-top: 32px;
     }
 
-    .activity-card {
-      display: block;
-      position: relative;
-      min-width: 0;
-      aspect-ratio: 16 / 9;
+    .home-card {
+      display: flex;
+      flex-direction: column;
       overflow: hidden;
-      border-radius: 12px;
+      min-width: 0;
+      color: inherit;
       text-decoration: none;
-      background: #10243b;
-      border: 1px solid rgba(103, 192, 235, .25);
+      background: linear-gradient(145deg, #102C50, #09172B);
+      border: 1px solid rgba(216,188,131,.18);
+      border-radius: 14px;
+      transition: transform .3s ease, border-color .3s ease;
     }
 
-    .activity-card img {
+    .home-card:hover {
+      transform: translateY(-6px);
+      border-color: var(--gold);
+    }
+
+    .home-card img {
       display: block;
       width: 100%;
-      height: 100%;
+      aspect-ratio: 1 / 1;
       object-fit: cover;
-      transition: transform .45s ease;
     }
 
-    .activity-card:hover img {
-      transform: scale(1.06);
+    .home-card-content { padding: 18px; }
+
+    .home-card-content small {
+      color: var(--gold);
+      letter-spacing: 1.5px;
+      font-size: .7rem;
+      text-transform: uppercase;
     }
 
-    .activity-card::after {
-      content: "";
-      position: absolute;
-      inset: 35% 0 0;
-      background: linear-gradient(transparent, rgba(3, 10, 22, .94));
-      pointer-events: none;
+    .home-card-content h3 {
+      margin: 9px 0;
+      font-size: 1.08rem;
     }
 
-    .activity-play {
-      position: absolute;
-      z-index: 2;
-      top: 10px;
-      right: 10px;
-      width: 32px;
-      height: 32px;
-      display: grid;
-      place-items: center;
-      border-radius: 50%;
-      color: white;
-      background: rgba(4, 13, 27, .8);
-      border: 1px solid rgba(255, 255, 255, .5);
-      font-size: 12px;
+    .home-card-content p {
+      color: var(--muted);
+      font-size: .88rem;
+      line-height: 1.7;
     }
 
-    .activity-caption {
-      position: absolute;
-      z-index: 2;
-      left: 12px;
-      right: 12px;
-      bottom: 11px;
-      color: #fff;
-      font-size: 13px;
-      font-weight: 700;
-      line-height: 1.4;
-      overflow-wrap: anywhere;
-    }
-
-    .experience-group {
-      padding: 22px;
-      border: 1px solid rgba(87, 185, 231, .3);
-      border-radius: 12px;
-      background: rgba(10, 27, 47, .5);
-    }
-
-    .experience-group-heading {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 12px;
-      margin-bottom: 18px;
-    }
-
-    .experience-group-heading h3 {
-      margin: 0;
-    }
-
-    .experience-group-heading span {
-      color: #a8bdd4;
-      font-size: 12px;
+    .home-card-content .card-link {
+      display: inline-block;
+      margin-top: 8px;
+      color: var(--gold);
+      font-size: .76rem;
       letter-spacing: 1px;
     }
 
-    .project-grid.academic-project-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 22px;
+    .home-section-intro {
+      max-width: 660px;
+      color: var(--muted);
+      line-height: 1.8;
     }
 
-    .academic-project-grid .project-card {
-      min-width: 0;
+    .home-section-action {
+      display: flex;
+      justify-content: center;
+      margin-top: 38px;
     }
 
-    .academic-project-grid .project-image {
-      aspect-ratio: 1 / 1;
-      overflow: hidden;
-    }
-
-    .academic-project-grid .project-image img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    .project-pdf-link {
-      display: inline-block;
-      margin-top: 12px;
-      color: #75d6ff;
-      font-size: 12px;
-      font-weight: 700;
-      letter-spacing: .6px;
+    .home-section-action a {
       text-decoration: none;
     }
 
-    .project-pdf-link:hover {
-      color: #f0d39a;
+    .home-experience-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 24px;
+      margin-top: 34px;
     }
 
-    .portfolio-group + .portfolio-group {
-      margin-top: 42px;
+    .home-experience {
+      padding: 24px;
+      border: 1px solid rgba(216,188,131,.22);
+      border-radius: 16px;
+      background: linear-gradient(145deg, #102C50, #081629);
     }
 
-    .portfolio-group-heading {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 16px;
-      margin-bottom: 22px;
+    .home-experience h3 { margin: 0 0 10px; }
+
+    .home-experience p {
+      color: var(--muted);
+      line-height: 1.75;
+      font-size: .9rem;
     }
 
-    .portfolio-group-heading h3 {
-      margin-bottom: 7px;
+    .home-experience .experience-number {
+      color: var(--gold);
+      font-size: .75rem;
+      letter-spacing: 2px;
     }
 
-    .achievement-grid,
-    .personal-photo-grid {
+    .home-achievement-strip {
       display: grid;
       grid-template-columns: repeat(4, minmax(0, 1fr));
       gap: 16px;
+      margin-top: 32px;
     }
 
-    .achievement-card,
-    .personal-photo-card {
-      overflow: hidden;
-      border: 1px solid rgba(103, 192, 235, .25);
+    .home-achievement {
+      padding: 20px;
       border-radius: 12px;
-      background: #0b192b;
+      background: rgba(16,44,80,.75);
+      border: 1px solid rgba(216,188,131,.15);
     }
 
-    .achievement-card img,
-    .personal-photo-card img {
+    .home-achievement strong {
       display: block;
-      width: 100%;
-      aspect-ratio: 4 / 3;
-      object-fit: cover;
+      margin-bottom: 8px;
+      color: var(--gold);
+      font-size: .95rem;
     }
 
-    .achievement-card p,
-    .personal-photo-card p {
-      padding: 12px;
-      margin: 0;
-      color: #d7e4f2;
-      font-size: 13px;
-      line-height: 1.5;
+    .home-achievement span {
+      color: var(--muted);
+      font-size: .82rem;
+      line-height: 1.6;
     }
 
-    @media (max-width: 760px) {
-      .activity-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
-        gap: 10px !important;
-      }
-
-      .experience-group {
-        padding: 14px;
-      }
-
-      .project-grid.academic-project-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 14px;
-      }
-
-      .achievement-grid,
-      .personal-photo-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-
-      .activity-caption {
-        font-size: 11px;
-        left: 8px;
-        right: 8px;
-        bottom: 8px;
-      }
+    .home-contact-cta {
+      padding: 42px;
+      border-radius: 18px;
+      border: 1px solid rgba(216,188,131,.3);
+      background: radial-gradient(ellipse at top right, #17385F, #071A33 68%);
     }
 
-    @media (max-width: 420px) {
-      .project-grid.academic-project-grid {
-        grid-template-columns: 1fr;
-      }
+    .home-contact-cta p {
+      max-width: 600px;
+      color: var(--muted);
+      line-height: 1.8;
+    }
+
+    .home-contact-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 22px;
+    }
+
+    .home-contact-links a {
+      color: var(--ice);
+      text-decoration: none;
+      border-bottom: 1px solid var(--gold);
+      padding: 8px 0;
+      margin-right: 18px;
+    }
+
+    @media (max-width: 1000px) {
+      .home-preview { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .home-achievement-strip { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+
+    @media (max-width: 700px) {
+      .home-preview { gap: 14px; }
+      .home-experience-grid { grid-template-columns: 1fr; }
+      .home-achievement-strip { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .home-contact-cta { padding: 25px; }
+    }
+
+    @media (max-width: 380px) {
+      .home-preview { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -241,18 +212,18 @@
 <body>
   <header class="site-header" id="top">
     <nav class="navbar container" aria-label="Main navigation">
-      <a class="brand" href="#home" aria-label="Oishi home">OISHI<span>.</span></a>
+      <a class="brand" href="index.html" aria-label="Oishi home">OISHI<span>.</span></a>
 
-      <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation" aria-expanded="false">
+      <button class="menu-toggle" id="menuToggle"
+        type="button" aria-label="Toggle navigation" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
 
       <div class="nav-links" id="navLinks">
-        <a class="nav-link active" href="#home">Home</a>
-        <a class="nav-link" href="#about">Who I Am</a>
-        <a class="nav-link" href="#academic-work">Academic Work</a>
-        <a class="nav-link" href="#experiences">Beyond the Classroom</a>
-        <a class="nav-link" href="#achievements">Achievements</a>
+        <a class="nav-link active" href="index.html">Home</a>
+        <a class="nav-link" href="about.html">About</a>
+        <a class="nav-link" href="portfolio.html">Portfolio</a>
+        <a class="nav-link" href="extracurricular.html">Extracurricular</a>
         <a class="nav-link" href="#contact">Contact</a>
         <a class="nav-cv" href="assets/cv/faria-ahmed-oishi-cv.pdf" target="_blank" rel="noopener">View CV ↗</a>
       </div>
@@ -260,25 +231,41 @@
   </header>
 
   <main>
-    <!-- HERO: preserved -->
+    <!-- HERO -->
     <section class="hero" id="home">
       <div class="hero-slides" aria-hidden="true">
-        <div class="hero-slide active" style="background-image:url('assets/images/hero/oishi-action-reporting.jpg')"></div>
-        <div class="hero-slide" style="background-image:url('assets/images/hero/oishi-action-event.jpg')"></div>
-        <div class="hero-slide" style="background-image:url('assets/images/hero/oishi-action-production.jpg')"></div>
+        <div class="hero-slide active"
+          style="background-image:url('assets/images/hero/oishi-action-reporting.jpg')"></div>
+        <div class="hero-slide"
+          style="background-image:url('assets/images/hero/oishi-action-event.jpg')"></div>
+        <div class="hero-slide"
+          style="background-image:url('assets/images/hero/oishi-action-production.jpg')"></div>
       </div>
+
       <div class="hero-overlay"></div>
       <div class="hero-glow"></div>
 
       <div class="container hero-inner">
         <div class="hero-content">
           <p class="eyebrow hero-eyebrow">MEDIA · JOURNALISM · STORYTELLING</p>
-          <h1 class="hero-title">Stories that<br><span class="hero-highlight" id="heroHighlight">matter.</span></h1>
-          <p class="hero-description">Exploring people, perspectives and<br class="desktop-break"> the power of media.</p>
+
+          <h1 class="hero-title">
+            Stories that<br>
+            <span class="hero-highlight" id="heroHighlight">matter.</span>
+          </h1>
+
+          <p class="hero-description">
+            Exploring people, perspectives and<br class="desktop-break">
+            the power of media.
+          </p>
 
           <div class="hero-actions">
-            <a class="button button-primary" href="#academic-work">Explore My Work <span>↘</span></a>
-            <a class="button button-outline" href="assets/cv/faria-ahmed-oishi-cv.pdf" target="_blank" rel="noopener">View My CV ↗</a>
+            <a class="button button-primary" href="portfolio.html">
+              Explore My Work <span>↘</span>
+            </a>
+            <a class="button button-outline"
+              href="assets/cv/faria-ahmed-oishi-cv.pdf"
+              target="_blank" rel="noopener">View My CV ↗</a>
           </div>
 
           <div class="hero-controls">
@@ -292,18 +279,20 @@
             </div>
           </div>
         </div>
+
         <p class="hero-caption">CURIOUS MIND. CREATIVE PERSPECTIVE. MEANINGFUL STORIES.</p>
       </div>
       <div class="hero-bottom-line"></div>
     </section>
 
-    <!-- WHO I AM: preserved -->
+    <!-- WHO I AM: HOME PREVIEW -->
     <section class="about-section section" id="about">
       <div class="container about-layout">
         <div class="about-photo-column">
           <div class="portrait-frame">
             <div class="portrait-corner portrait-corner-top"></div>
-            <img src="assets/images/about/oishi-formal-portrait.jpg" alt="Faria Ahmed Oishi" class="about-portrait" loading="eager">
+            <img src="assets/images/about/oishi-formal-portrait.jpg"
+              alt="Faria Ahmed Oishi" class="about-portrait" loading="eager">
             <div class="portrait-corner portrait-corner-bottom"></div>
           </div>
           <p class="portrait-label">FARIA AHMED OISHI</p>
@@ -313,11 +302,13 @@
           <p class="eyebrow">01 / A LITTLE ABOUT ME</p>
           <h2 class="section-heading">Who I <span>Am.</span></h2>
           <p class="about-role">DIGITAL JOURNALISM · ULAB</p>
+
           <p class="about-intro">
-            I am Faria Ahmed Oishi, a Media Studies and Journalism student at
-            the University of Liberal Arts Bangladesh, majoring in Digital
+            I am Faria Ahmed Oishi, a Media Studies and Journalism student
+            at the University of Liberal Arts Bangladesh, majoring in Digital
             Journalism with a minor in Business Administration.
           </p>
+
           <p class="about-description">
             I am passionate about storytelling, media, creative communication
             and meaningful conversations. Through academic work and
@@ -326,18 +317,30 @@
           </p>
 
           <div class="about-stats">
-            <div class="stat-item"><strong>12</strong><span>Current Semester</span></div>
-            <div class="stat-item"><strong>3.35</strong><span>CGPA</span></div>
-            <div class="stat-item stat-major"><strong>Digital Journalism</strong><span>Major</span></div>
+            <div class="stat-item">
+              <strong>12</strong>
+              <span>Current Semester</span>
+            </div>
+            <div class="stat-item">
+              <strong>3.35</strong>
+              <span>CGPA</span>
+            </div>
+            <div class="stat-item stat-major">
+              <strong>Digital Journalism</strong>
+              <span>Major</span>
+            </div>
           </div>
-          <a class="text-link" href="#achievements">Discover My Journey <span>→</span></a>
+
+          <a class="text-link" href="about.html">Discover My Journey <span>→</span></a>
         </div>
       </div>
     </section>
 
-    <!-- ULAB BANNER: preserved -->
+    <!-- ULAB BANNER -->
     <section class="university-banner">
-      <img class="university-background" src="assets/images/about/University-of-Liberal-Arts-Bangladesh-ULAB-1920x700.jpg" alt="University of Liberal Arts Bangladesh campus" loading="lazy">
+      <img class="university-background"
+        src="assets/images/about/University-of-Liberal-Arts-Bangladesh-ULAB-1920x700.jpg"
+        alt="University of Liberal Arts Bangladesh campus" loading="lazy">
       <div class="university-overlay"></div>
       <div class="container university-content">
         <p class="eyebrow">MY ACADEMIC HOME</p>
@@ -347,7 +350,7 @@
       </div>
     </section>
 
-    <!-- ACADEMIC WORK -->
+    <!-- ACADEMIC PORTFOLIO PREVIEW -->
     <section class="academic-section section" id="academic-work">
       <div class="container">
         <div class="section-heading-row">
@@ -355,28 +358,117 @@
             <p class="eyebrow">02 / SELECTED ACADEMIC WORK</p>
             <h2 class="section-heading">Ideas into <em>impact.</em></h2>
           </div>
-          <p class="section-side-note">Fourteen academic projects exploring journalism, research, writing, communication and creative media.</p>
+          <p class="section-side-note">
+            Research, journalism, writing and creative media —
+            selected projects from my academic journey.
+          </p>
         </div>
 
-        <div class="portfolio-group">
-          <div class="portfolio-group-heading">
-            <div><h3>Major Course Portfolio</h3><p class="eyebrow">DIGITAL JOURNALISM</p></div>
-            <span class="project-count">07 PROJECTS</span>
-          </div>
-          <div class="project-grid academic-project-grid" id="majorProjects"></div>
+        <p class="home-section-intro">
+          Explore a selection of my coursework. The full portfolio includes
+          14 projects across Major and Common Course categories, with project
+          descriptions and PDF access.
+        </p>
+
+        <div class="home-preview">
+          <a class="home-card" href="portfolio.html#msj-3151-in-depth-report">
+            <img src="assets/images/major-course-portfolio/msj-3151-in-depth-report.jpg"
+              alt="MSJ 3151 In-depth Report" loading="lazy">
+            <div class="home-card-content">
+              <small>MSJ 3151 · Major</small>
+              <h3>In-depth Report</h3>
+              <p>A reporting project focused on exploring a topic beyond surface-level information.</p>
+              <span class="card-link">VIEW PROJECT ↗</span>
+            </div>
+          </a>
+
+          <a class="home-card" href="portfolio.html#msj-3152-multimedia-news-story">
+            <img src="assets/images/major-course-portfolio/msj-3152-multimedia-news-story.jpg"
+              alt="MSJ 3152 Multimedia News Story" loading="lazy">
+            <div class="home-card-content">
+              <small>MSJ 3152 · Major</small>
+              <h3>Multimedia News Story</h3>
+              <p>Journalism presented through visual and digital storytelling formats.</p>
+              <span class="card-link">VIEW PROJECT ↗</span>
+            </div>
+          </a>
+
+          <a class="home-card" href="portfolio.html#msj-3251-mojo-project">
+            <img src="assets/images/major-course-portfolio/msj-3251-mojo-project.jpg"
+              alt="MSJ 3251 Mobile Journalism project" loading="lazy">
+            <div class="home-card-content">
+              <small>MSJ 3251 · Major</small>
+              <h3>Mobile Journalism</h3>
+              <p>A mobile-first journalism project built around reporting with mobile tools.</p>
+              <span class="card-link">VIEW PROJECT ↗</span>
+            </div>
+          </a>
+
+          <a class="home-card" href="portfolio.html#msj-3252-news-translation">
+            <img src="assets/images/major-course-portfolio/msj-3252-news-translation.jpg"
+              alt="MSJ 3252 News Translation" loading="lazy">
+            <div class="home-card-content">
+              <small>MSJ 3252 · Major</small>
+              <h3>News Translation</h3>
+              <p>A journalism assignment focused on clear and accurate news translation.</p>
+              <span class="card-link">VIEW PROJECT ↗</span>
+            </div>
+          </a>
+
+          <a class="home-card" href="portfolio.html#msj-1201-research-proposal">
+            <img src="assets/images/common-course-portfolio/msj-1201-research-proposal.jpg"
+              alt="MSJ 1201 Research Proposal" loading="lazy">
+            <div class="home-card-content">
+              <small>MSJ 1201 · Common</small>
+              <h3>Research Proposal</h3>
+              <p>A research project built around a focused question and proposal structure.</p>
+              <span class="card-link">VIEW PROJECT ↗</span>
+            </div>
+          </a>
+
+          <a class="home-card" href="portfolio.html#ged-1203-bangla-feature">
+            <img src="assets/images/common-course-portfolio/ged-1203-bangla-feature.jpg"
+              alt="GED 1203 Bangla Feature" loading="lazy">
+            <div class="home-card-content">
+              <small>GED 1203 · Common</small>
+              <h3>Bangla Feature</h3>
+              <p>Feature writing through narrative, descriptive language and storytelling.</p>
+              <span class="card-link">VIEW PROJECT ↗</span>
+            </div>
+          </a>
+
+          <a class="home-card" href="portfolio.html#msj-2101-communication-technology-blog">
+            <img src="assets/images/common-course-portfolio/msj-2101-communication-technology-blog.jpg"
+              alt="MSJ 2101 Communication Technology Blog" loading="lazy">
+            <div class="home-card-content">
+              <small>MSJ 2101 · Common</small>
+              <h3>Communication Technology</h3>
+              <p>A blog project exploring communication technology and contemporary media.</p>
+              <span class="card-link">VIEW PROJECT ↗</span>
+            </div>
+          </a>
+
+          <a class="home-card" href="portfolio.html#msj-2102-digital-art-installation">
+            <img src="assets/images/common-course-portfolio/msj-2102-digital-art-installation.jpg"
+              alt="MSJ 2102 Digital Art Installation" loading="lazy">
+            <div class="home-card-content">
+              <small>MSJ 2102 · Common</small>
+              <h3>Digital Art Installation</h3>
+              <p>A creative media project exploring visual expression through digital art.</p>
+              <span class="card-link">VIEW PROJECT ↗</span>
+            </div>
+          </a>
         </div>
 
-        <div class="portfolio-group common-portfolio">
-          <div class="portfolio-group-heading">
-            <div><h3>Common Course Portfolio</h3><p class="eyebrow">WRITING · COMMUNICATION · CREATIVE MEDIA</p></div>
-            <span class="project-count">07 PROJECTS</span>
-          </div>
-          <div class="project-grid academic-project-grid" id="commonProjects"></div>
+        <div class="home-section-action">
+          <a class="button button-outline" href="portfolio.html">
+            Explore All 14 Projects <span>→</span>
+          </a>
         </div>
       </div>
     </section>
 
-    <!-- BEYOND THE CLASSROOM: each group occupies its own row -->
+    <!-- EXTRACURRICULAR PREVIEW -->
     <section class="experience-section section" id="experiences">
       <div class="container">
         <div class="section-heading-row experience-heading-row">
@@ -384,293 +476,151 @@
             <p class="eyebrow">03 / EXPERIENCES & COLLABORATION</p>
             <h2 class="section-heading">Beyond the <em>Classroom.</em></h2>
           </div>
-          <p class="section-side-note">Journalism, student publications, creative design and professional learning.</p>
+          <p class="section-side-note">
+            University media, student publications, documentation
+            and creative collaboration.
+          </p>
         </div>
 
-        <div class="experience-filters" role="group" aria-label="Filter experience groups">
-          <button class="filter-button active" type="button" data-filter="all">All Groups</button>
-          <button class="filter-button" type="button" data-filter="ulab-tv">ULAB TV</button>
-          <button class="filter-button" type="button" data-filter="ulabian">The ULABian</button>
-          <button class="filter-button" type="button" data-filter="cetl">CETL ULAB</button>
+        <p class="home-section-intro">
+          My extracurricular work spans television production, student
+          journalism, editorial design and professional learning projects.
+          Visit each group to explore its projects and original links.
+        </p>
+
+        <div class="home-experience-grid">
+          <article class="home-experience">
+            <span class="experience-number">01 / MEDIA PRODUCTION</span>
+            <h3>ULAB TV</h3>
+            <p>
+              News reports, interviews, campus coverage, video production
+              and visual storytelling from university media projects.
+            </p>
+            <a class="text-link" href="extracurricular.html#ulab-tv">
+              Explore ULAB TV <span>→</span>
+            </a>
+          </article>
+
+          <article class="home-experience">
+            <span class="experience-number">02 / STUDENT PUBLICATION</span>
+            <h3>The ULABian</h3>
+            <p>
+              Poems, editorial posters and creative publication work
+              connected to student journalism and campus communication.
+            </p>
+            <a class="text-link" href="extracurricular.html#ulabian">
+              Explore The ULABian <span>→</span>
+            </a>
+          </article>
+
+          <article class="home-experience">
+            <span class="experience-number">03 / PROFESSIONAL LEARNING</span>
+            <h3>CETL ULAB</h3>
+            <p>
+              Faculty interviews, documentation, learning and teaching
+              content, and graphic design projects.
+            </p>
+            <a class="text-link" href="extracurricular.html#cetl">
+              Explore CETL ULAB <span>→</span>
+            </a>
+          </article>
         </div>
 
-        <div class="experience-grid" id="experienceGroups"></div>
+        <div class="home-section-action">
+          <a class="button button-outline" href="extracurricular.html">
+            Explore All Extracurricular Work <span>→</span>
+          </a>
+        </div>
       </div>
     </section>
 
-    <!-- ACHIEVEMENTS -->
-    <section class="section" id="achievements">
+    <!-- ACHIEVEMENTS PREVIEW -->
+    <section class="section">
       <div class="container">
         <div class="section-heading-row">
           <div>
             <p class="eyebrow">04 / RECOGNITION</p>
-            <h2 class="section-heading">Achievements & <em>Milestones.</em></h2>
+            <h2 class="section-heading">Milestones & <em>Achievements.</em></h2>
           </div>
-          <p class="section-side-note">Recognition across student media, creative work and campus activities.</p>
+          <p class="section-side-note">
+            A few milestones from creative work and university activities.
+          </p>
         </div>
 
-        <div class="achievement-grid">
-          <article class="achievement-card">
-            <img src="assets/images/experience-achievements/The Best Contributor (Creative & Graphics) The ULABian Newspaper, Summer 2025 Term.JPG" alt="The Best Contributor, Creative and Graphics, The ULABian Newspaper, Summer 2025" loading="lazy">
-            <p><strong>The Best Contributor</strong><br>Creative & Graphics · The ULABian Newspaper · Summer 2025</p>
-          </article>
-          <article class="achievement-card">
-            <img src="assets/images/experience-achievements/2nd place in Art Competition, ULAB Student Affairs Office, 2025.jpeg" alt="Second place in Art Competition, ULAB Student Affairs Office, 2025" loading="lazy">
-            <p><strong>2nd Place</strong><br>Art Competition · ULAB Student Affairs Office · 2025</p>
-          </article>
-          <article class="achievement-card">
-            <img src="assets/images/experience-achievements/3rd place in Art Competition, ULAB Language Club, 2025.jpeg" alt="Third place in Art Competition, ULAB Language Club, 2025" loading="lazy">
-            <p><strong>3rd Place</strong><br>Art Competition · ULAB Language Club · 2025</p>
-          </article>
-          <article class="achievement-card">
-            <img src="assets/images/experience-achievements/Runner Up in UIGC Intra Futsal Cup, 2023.jpg" alt="Runner-up, UIGC Intra Futsal Cup, 2023" loading="lazy">
-            <p><strong>Runner-Up</strong><br>UIGC Intra Futsal Cup · 2023</p>
-          </article>
+        <div class="home-achievement-strip">
+          <div class="home-achievement">
+            <strong>Best Contributor</strong>
+            <span>Creative & Graphics · The ULABian Newspaper · Summer 2025</span>
+          </div>
+          <div class="home-achievement">
+            <strong>2nd Place</strong>
+            <span>Art Competition · ULAB Student Affairs Office · 2025</span>
+          </div>
+          <div class="home-achievement">
+            <strong>3rd Place</strong>
+            <span>Art Competition · ULAB Language Club · 2025</span>
+          </div>
+          <div class="home-achievement">
+            <strong>Runner-up</strong>
+            <span>UIGC Intra Futsal Cup · 2023</span>
+          </div>
+        </div>
+
+        <div class="home-section-action">
+          <a class="button button-outline" href="about.html#achievements">
+            View About & Achievements <span>→</span>
+          </a>
         </div>
       </div>
     </section>
 
-    <!-- PERSONAL PHOTO GALLERY -->
-    <section class="section" id="gallery">
-      <div class="container">
-        <div class="section-heading-row">
-          <div>
-            <p class="eyebrow">05 / MOMENTS & MEMORIES</p>
-            <h2 class="section-heading">Beyond the <em>Frame.</em></h2>
-          </div>
-          <p class="section-side-note">A few moments from university life, media work and everyday experiences.</p>
-        </div>
-
-        <div class="personal-photo-grid">
-          <article class="personal-photo-card"><img src="assets/images/personal/oishi-photo-01.jpg" alt="Oishi photo 1" loading="lazy"><p>Moments & Memories</p></article>
-          <article class="personal-photo-card"><img src="assets/images/personal/oishi-photo-02.jpg" alt="Oishi photo 2" loading="lazy"><p>Everyday Perspectives</p></article>
-          <article class="personal-photo-card"><img src="assets/images/personal/oishi-photo-03.jpg" alt="Oishi photo 3" loading="lazy"><p>Personal Journey</p></article>
-          <article class="personal-photo-card"><img src="assets/images/personal/oishi-photo-04.jpg" alt="Oishi photo 4" loading="lazy"><p>Campus Life</p></article>
-          <article class="personal-photo-card"><img src="assets/images/personal/oishi-photo-05.jpg" alt="Oishi photo 5" loading="lazy"><p>Creative Moments</p></article>
-          <article class="personal-photo-card"><img src="assets/images/personal/oishi-photo-06.jpg" alt="Oishi photo 6" loading="lazy"><p>Behind the Scenes</p></article>
-        </div>
-      </div>
-    </section>
-
-    <!-- CONTACT -->
+    <!-- CONTACT PREVIEW -->
     <section class="contact-section section" id="contact">
-      <div class="container contact-layout">
-        <div class="contact-title-block">
-          <p class="eyebrow">06 / LET'S CONNECT</p>
-          <h2>Every story starts<br>with a <em>conversation.</em></h2>
-        </div>
+      <div class="container">
+        <div class="home-contact-cta">
+          <p class="eyebrow">05 / LET'S CONNECT</p>
+          <h2 class="section-heading">
+            Every story starts<br>with a <em>conversation.</em>
+          </h2>
+          <p>
+            For journalism, media production, creative projects
+            and collaboration, feel free to get in touch.
+          </p>
 
-        <div class="contact-details">
-          <p>For journalism, media, creative projects and collaboration, feel free to get in touch.</p>
-          <div class="contact-links">
-            <a href="mailto:fariaahmedoishi@gmail.com"><span class="contact-icon">✉</span> fariaahmedoishi@gmail.com</a>
-            <a href="tel:+8801750445537"><span class="contact-icon">☎</span> +880 1750-445537</a>
-            <a href="https://www.linkedin.com/in/faria-ahmed-oishi-b103a4279" target="_blank" rel="noopener"><span class="contact-icon">in</span> LinkedIn</a>
-            <a href="https://www.youtube.com/@FariaAhmedOishi" target="_blank" rel="noopener"><span class="contact-icon">▶</span> YouTube</a>
-            <a href="https://www.facebook.com/share/1Hze2ASrSm/?mibextid=wwXIfr" target="_blank" rel="noopener"><span class="contact-icon">f</span> Facebook</a>
+          <div class="home-contact-links">
+            <a href="mailto:fariaahmedoishi@gmail.com">Email ↗</a>
+            <a href="tel:+8801750445537">Call ↗</a>
+            <a href="https://www.linkedin.com/in/faria-ahmed-oishi-b103a4279"
+              target="_blank" rel="noopener">LinkedIn ↗</a>
+            <a href="https://www.youtube.com/@FariaAhmedOishi"
+              target="_blank" rel="noopener">YouTube ↗</a>
+            <a href="https://www.facebook.com/share/1Hze2ASrSm/?mibextid=wwXIfr"
+              target="_blank" rel="noopener">Facebook ↗</a>
           </div>
-        </div>
 
-        <div class="contact-cv">
-          <a class="button button-gold" href="assets/cv/faria-ahmed-oishi-cv.pdf" target="_blank" rel="noopener">Download My CV ↓</a>
+          <div class="hero-actions">
+            <a class="button button-primary"
+              href="assets/cv/faria-ahmed-oishi-cv.pdf"
+              target="_blank" rel="noopener">Download My CV ↓</a>
+            <a class="button button-outline" href="about.html">More About Me →</a>
+          </div>
         </div>
       </div>
     </section>
   </main>
 
+  <!-- FOOTER -->
   <footer class="site-footer">
     <div class="container footer-inner">
-      <a class="brand footer-brand" href="#home">OISHI<span>.</span></a>
+      <a class="brand footer-brand" href="index.html">OISHI<span>.</span></a>
       <p>Stories that matter. Perspectives that inspire.</p>
-      <span class="copyright">© <span id="year">2026</span> Faria Ahmed Oishi. All rights reserved.</span>
+      <span class="copyright">
+        © <span id="year">2026</span> Faria Ahmed Oishi. All rights reserved.
+      </span>
     </div>
   </footer>
 
   <a class="back-to-top" href="#top" aria-label="Back to top">↑</a>
-
-  <!-- Portfolio data and rendering -->
-  <script>
-    const majorProjects = [
-      ["MSJ 3151", "In-depth Report", "msj-3151-in-depth-report", "Investigative-style reporting exploring a topic beyond surface-level information."],
-      ["MSJ 3152", "Multimedia News Story", "msj-3152-multimedia-news-story", "A multimedia storytelling project combining journalism with visual and digital formats."],
-      ["MSJ 3251", "Mojo Project", "msj-3251-mojo-project", "Mobile journalism, field reporting and mobile-first news production."],
-      ["MSJ 3252", "News Translation", "msj-3252-news-translation", "Translating news while preserving accuracy, clarity and meaning."],
-      ["MSJ 3253", "Data-driven Journalism", "msj-3253-data-driven-journalism", "Journalism supported by data, research and evidence-based storytelling."],
-      ["MSJ 4151", "Investigative Journalism I", "msj-4151-investigative-report", "Investigative reporting focused on research, verification and public-interest questions."],
-      ["MSJ 4152", "Investigative Journalism II", "msj-4152-investigative-report", "An in-depth journalism project developing a story through evidence and investigation."]
-    ];
-
-    const commonProjects = [
-      ["MSJ 1201", "Research Proposal", "msj-1201-research-proposal", "Developing a research question, research direction and proposal structure."],
-      ["GED 1203", "Bangla Feature", "ged-1203-bangla-feature", "Feature writing using narrative, descriptive details and a reader-focused Bangla style."],
-      ["MSJ 2101", "Communication Technology Blog", "msj-2101-communication-technology-blog", "A blog exploring communication technology and its role in contemporary media."],
-      ["MSJ 2102", "Digital Art / Art Installation", "msj-2102-digital-art-installation", "Visual expression through digital art and installation concepts."],
-      ["MSJ 2201", "Performance Art / Media Production", "msj-2201-performance-art-media-production", "Exploring mask, performance art and media production."],
-      ["MSJ 2202", "Video Art", "msj-2202-video-art", "Creative visual storytelling through video art."],
-      ["GEF 1202", "English Feature", "gef-1202-english-feature", "English feature writing focused on structure, storytelling and clear communication."]
-    ];
-
-    function renderAcademicProjects(targetId, projects, folder) {
-      const target = document.getElementById(targetId);
-      target.innerHTML = projects.map((project, index) => {
-        const [course, title, file, description] = project;
-        const image = `assets/images/${folder}/${file}.jpg`;
-        const pdf = `assets/pdf/${folder}/${file}.pdf`;
-
-        return `
-          <article class="project-card project-feature-card">
-            <div class="project-image">
-              <img src="${image}" alt="${title} project thumbnail" loading="lazy"
-                   onerror="this.onerror=null;this.src='assets/images/hero/oishi-background-photo-01.jpg'">
-            </div>
-            <div class="project-content">
-              <span class="project-course">${course}</span>
-              <h4>${title}</h4>
-              <p>${description}</p>
-              <a class="project-pdf-link" href="${pdf}" target="_blank" rel="noopener">VIEW PROJECT PDF ↗</a>
-            </div>
-          </article>`;
-      }).join("");
-    }
-
-    renderAcademicProjects("majorProjects", majorProjects, "major-course-portfolio");
-    renderAcademicProjects("commonProjects", commonProjects, "common-course-portfolio");
-
-    const experienceData = [
-      {
-        category: "ulab-tv",
-        title: "ULAB TV",
-        projects: [
-          ["স্বপ্ন ও সফলতার মেলবন্ধনের মধ্য দিয়ে অনুষ্ঠিত হলো ইউল্যাবের ৮ম সমাবর্তন", "https://youtu.be/_oWdkHcJm3g"],
-          ["Interview with Dr. David A. Peterson", "https://youtu.be/o3CgLhvHykY"],
-          ["Kosovo Builds Bridges with Bangladesh", "https://youtu.be/A22MgkGTqSc"],
-          ["সাংবাদিকদের বিরুদ্ধে অপরাধের দায়মুক্তি অবসানের আন্তর্জাতিক দিবস-২০২৪", "https://youtu.be/VrdZ_obfpdg"],
-          ["জাতীয় বৃক্ষমেলা-২০২৪", "https://youtu.be/uJbyKQP2MyY"],
-          ["ইউল্যাবের ফ্রেশার ওরিয়েন্টেশন স্প্রিং ’২৪", "https://youtu.be/LYfKaeHs1eY"],
-          ["ইউল্যাবের অনুষ্ঠান ট্র্যাশন শো", "https://youtu.be/mfu_WrU8dIA"],
-          ["CHUNK 05 · ULAB TV", "https://youtu.be/O5VlYqVNe7A"],
-          ["২৫শে মার্চ কালোরাতের নির্মমতা", "https://youtu.be/GssX6ReIou4"],
-          ["খাবারের নান্দনিকতা", "https://youtu.be/PIRYL9azzkg"],
-          ["বিজয় দিবসের শ্রদ্ধাঞ্জলি", "https://youtu.be/Nj9yQ_lK8Kg"],
-          ["সাকরাইন উৎসব (ইতিহাস ও ঐতিহ্য)", "https://youtu.be/QxTIK-wniXE"],
-          ["The Day of Ashura · Poster", "https://www.facebook.com/share/p/1ZNpY9vDPk/"]
-        ]
-      },
-      {
-        category: "ulabian",
-        title: "The ULABian",
-        projects: [
-          ["স্বপ্নের হাহাকার · Poem", "https://theulabianblog.wordpress.com/2026/02/25/%e0%a6%b8%e0%a7%8d%e0%a6%aa%e0%a6%a8%e0%a7%87%e0%a6%b0-%e0%a6%b9%e0%a6%be%e0%a6%b9%e0%a6%be%e0%a6%95%e0%a6%be%e0%a6%b0/"],
-          ["একুশের শ্রদ্ধাঞ্জলি · Poem", "https://theulabianblog.wordpress.com/2026/02/21/%e0%a6%8f%e0%a6%95%e0%a7%81%e0%a6%b6%e0%a7%87%e0%a6%b0-%e0%a6%b6%e0%a7%8d%e0%a6%b0%e0%a6%a6%e0%a7%8d%e0%a6%a7%e0%a6%be%e0%a6%9e%e0%a7%8d%e0%a6%9c%e0%a6%b2%e0%a6%bf/"],
-          ["সুন্দরবন দিবস · Poster", "https://www.facebook.com/share/p/1EgyEKi3dM/"],
-          ["আন্তর্জাতিক মাতৃভাষা দিবস · Poster", "https://www.facebook.com/share/p/1E3M9TTFE4/"],
-          ["ঈশ্বরচন্দ্র বিদ্যাসাগর · Poster", "https://www.facebook.com/share/p/14pEAcbM7c6/"],
-          ["রবীন্দ্রনাথ ঠাকুর প্রয়াণ দিবস · Poster", "https://www.facebook.com/share/p/1CDmT4MbDD/"],
-          ["Death Anniversary of J.R.R. Tolkien", "https://www.facebook.com/share/p/19unNXLknV/"],
-          ["Eid-e-Milad-un-Nabi · Poster", "https://www.facebook.com/share/p/19x26i4bp8/"],
-          ["Birthday of Edgar Allan Poe", "https://www.facebook.com/share/p/14t2tNVbq4B/"],
-          ["পহেলা ফাল্গুন · Poster", "https://www.facebook.com/share/p/1PZA2cZbY9/"],
-          ["একুশের শ্রদ্ধাঞ্জলি · Poster", "https://www.facebook.com/share/p/1DMoB5d1L4/"],
-          ["স্বপ্নের হাহাকার · Poster", "https://www.facebook.com/share/p/1aRTAALgWM/"],
-          ["The Divinity of Motherhood", "https://www.facebook.com/share/p/19VUHs8n57/"],
-          ["World Bee Day · Poster", "https://www.facebook.com/share/p/14uJ1A1BTcx/"],
-          ["বাবা · Poster", "https://www.facebook.com/share/p/1C7jNDjWih/"],
-          ["Global Day of Parents", "https://www.facebook.com/share/p/1GgrmgktHW/"]
-        ]
-      },
-      {
-        category: "cetl",
-        title: "CETL ULAB",
-        projects: [
-          ["New Faculty Orientation · Spring 2026", "https://youtube.com/shorts/cBZX8KOGTSs"],
-          ["Induction Training at ULAB CETL", "https://youtube.com/shorts/teUz-dmHn6s"],
-          ["Abir Bin Yousuf · Teaching & Learning for GenZ", "https://youtu.be/LKFb6ulakdM"],
-          ["Md. Sharafat Chowdhury · Teaching & Learning for GenZ", "https://youtu.be/58uCa5Hfdpo"],
-          ["Rukhsana Choudhury · Teaching & Learning for GenZ", "https://youtu.be/PIbYEDnY46U"],
-          ["Sabrina Lutfa, PhD · Teaching & Learning for GenZ", "https://youtu.be/VMXSTfQS_HY"],
-          ["Susmita Sangeeta Mridha · Teaching & Learning for GenZ", "https://youtu.be/Y3fZhM9Irnk"],
-          ["Artificial Intelligence in Teaching", "https://www.facebook.com/share/p/18dXtVRzhn/"],
-          ["Mastering Academia: Essential Skill", "https://www.facebook.com/share/p/18N1yS1cX2/"],
-          ["Full Funded Doctoral Research", "https://www.facebook.com/share/p/1EqMqr95ha/"],
-          ["Spatiotemporal GNN", "https://www.facebook.com/share/p/18GZmvgN3e/"],
-          ["Fostering Teachers", "https://www.facebook.com/share/p/1JQpcQzRPE/"],
-          ["JSPS Global Fellowship", "https://www.facebook.com/share/p/1DxnDkjJo2/"]
-        ]
-      }
-    ];
-
-    function getYouTubeId(url) {
-      try {
-        const parsed = new URL(url);
-        if (parsed.hostname.includes("youtu.be")) return parsed.pathname.slice(1);
-        if (parsed.pathname.includes("/shorts/")) return parsed.pathname.split("/shorts/")[1].split("/")[0];
-        return parsed.searchParams.get("v");
-      } catch {
-        return null;
-      }
-    }
-
-    function thumbnailFor(url, index) {
-      const id = getYouTubeId(url);
-      if (id) return `https://img.youtube.com/vi/${id}/hqdefault.jpg`;
-
-      const localPhotos = [
-        "assets/images/personal/oishi-photo-01.jpg",
-        "assets/images/personal/oishi-photo-02.jpg",
-        "assets/images/personal/oishi-photo-03.jpg",
-        "assets/images/personal/oishi-photo-04.jpg",
-        "assets/images/personal/oishi-photo-05.jpg",
-        "assets/images/personal/oishi-photo-06.jpg",
-        "assets/images/experience-achievements/The Best Contributor (Creative & Graphics) The ULABian Newspaper, Summer 2025 Term.JPG"
-      ];
-      return localPhotos[index % localPhotos.length];
-    }
-
-    function renderExperienceGroups() {
-      const container = document.getElementById("experienceGroups");
-
-      container.innerHTML = experienceData.map(group => `
-        <article class="experience-group" data-category="${group.category}">
-          <div class="experience-group-heading">
-            <h3>${group.title}</h3>
-            <span>${String(group.projects.length).padStart(2, "0")} PROJECTS</span>
-          </div>
-          <div class="activity-grid">
-            ${group.projects.map(([title, url], index) => `
-              <a class="activity-card" href="${url}" target="_blank" rel="noopener noreferrer"
-                 aria-label="${title.replace(/"/g, "&quot;")} — open project">
-                <img src="${thumbnailFor(url, index)}"
-                     alt="${title.replace(/"/g, "&quot;")}"
-                     loading="lazy"
-                     onerror="this.onerror=null;this.src='assets/images/hero/oishi-background-photo-01.jpg'">
-                <span class="activity-play" aria-hidden="true">↗</span>
-                <span class="activity-caption">${title}</span>
-              </a>
-            `).join("")}
-          </div>
-        </article>
-      `).join("");
-    }
-
-    renderExperienceGroups();
-
-    // Filter groups without breaking the separate-row layout.
-    document.querySelectorAll(".filter-button").forEach(button => {
-      button.addEventListener("click", () => {
-        document.querySelectorAll(".filter-button").forEach(item => item.classList.remove("active"));
-        button.classList.add("active");
-
-        const filter = button.dataset.filter;
-        document.querySelectorAll(".experience-group").forEach(group => {
-          group.style.display = filter === "all" || group.dataset.category === filter ? "" : "none";
-        });
-      });
-    });
-
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
-
   <script src="script.js"></script>
 </body>
 </html>
-```
