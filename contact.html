@@ -1,1 +1,1804 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#071A33">
+
+  <title>Contact | Faria Ahmed Oishi</title>
+  <meta name="description" content="Get in touch with Faria Ahmed Oishi for professional inquiries, collaborations, media projects and networking.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+  <style>
+    /* =========================================
+       OISHI PORTFOLIO — CONTACT PAGE
+       Premium Navy Blue / Soft Blue
+    ========================================= */
+
+    :root {
+      --navy: #071A33;
+      --navy-2: #0B2342;
+      --navy-3: #102C50;
+      --blue: #2196F3;
+      --sky: #90CAF9;
+      --pale: #E3F2FD;
+      --white: #FFFFFF;
+      --muted: #AABBD0;
+      --ink: #172C45;
+      --body: #53657A;
+      --line: rgba(144, 202, 249, 0.18);
+      --glass: rgba(255, 255, 255, 0.055);
+      --shadow: 0 24px 70px rgba(0, 15, 36, 0.18);
+      --radius: 22px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 95px;
+    }
+
+    body {
+      font-family: "DM Sans", sans-serif;
+      color: var(--ink);
+      background: #F4F8FC;
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    body, button, input, textarea {
+      font-family: "DM Sans", sans-serif;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button, input, textarea {
+      font: inherit;
+    }
+
+    button, a {
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    button:focus-visible,
+    a:focus-visible,
+    input:focus-visible,
+    textarea:focus-visible {
+      outline: 3px solid var(--blue);
+      outline-offset: 4px;
+    }
+
+    .container {
+      width: min(1160px, calc(100% - 44px));
+      margin-inline: auto;
+    }
+
+    .section {
+      padding: 100px 0;
+    }
+
+    .section-heading {
+      max-width: 670px;
+      margin-bottom: 45px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 17px;
+      color: #1674BD;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 2.7px;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 28px;
+      height: 2px;
+      background: currentColor;
+    }
+
+    h1, h2, h3 {
+      font-family: "Playfair Display", Georgia, serif;
+      line-height: 1.18;
+      font-weight: 600;
+    }
+
+    .section-heading h2 {
+      font-size: clamp(34px, 4vw, 49px);
+      letter-spacing: -1.1px;
+      margin-bottom: 17px;
+    }
+
+    .section-heading p {
+      color: var(--body);
+      font-size: 15px;
+      max-width: 570px;
+    }
+
+    /* NAVIGATION */
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(7, 26, 51, 0.95);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .navbar {
+      min-height: 78px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 25px;
+    }
+
+    .brand {
+      color: var(--white);
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: 27px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      white-space: nowrap;
+    }
+
+    .brand span {
+      color: var(--sky);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: #D6E1EE;
+      font-size: 13px;
+      font-weight: 600;
+      transition: color .25s ease;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--sky);
+    }
+
+    .nav-links .nav-contact {
+      padding: 11px 19px;
+      border: 1px solid rgba(144, 202, 249, .55);
+      border-radius: 999px;
+      color: var(--white);
+    }
+
+    .nav-links .nav-contact:hover {
+      background: var(--sky);
+      border-color: var(--sky);
+      color: var(--navy);
+    }
+
+    .menu-toggle {
+      display: none;
+      width: 44px;
+      height: 44px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      color: var(--white);
+      background: transparent;
+      font-size: 19px;
+      cursor: pointer;
+    }
+
+    /* HERO */
+
+    .contact-hero {
+      position: relative;
+      isolation: isolate;
+      overflow: hidden;
+      color: var(--white);
+      background:
+        radial-gradient(ellipse at 85% 15%, rgba(33, 150, 243, .19), transparent 35%),
+        radial-gradient(ellipse at 8% 100%, rgba(144, 202, 249, .09), transparent 35%),
+        linear-gradient(125deg, #06152B 0%, #0A2343 55%, #0D2D52 100%);
+    }
+
+    .contact-hero::before,
+    .contact-hero::after {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      border: 1px solid rgba(144, 202, 249, .12);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .contact-hero::before {
+      width: 550px;
+      height: 550px;
+      right: -150px;
+      top: -250px;
+      box-shadow:
+        0 0 0 50px rgba(144, 202, 249, .025),
+        0 0 0 100px rgba(144, 202, 249, .018);
+    }
+
+    .contact-hero::after {
+      width: 320px;
+      height: 320px;
+      right: 11%;
+      bottom: -235px;
+    }
+
+    .hero-inner {
+      min-height: 475px;
+      padding-block: 100px 95px;
+      display: grid;
+      grid-template-columns: 1.35fr .65fr;
+      align-items: center;
+      gap: 65px;
+    }
+
+    .hero-copy {
+      max-width: 720px;
+    }
+
+    .hero-copy .eyebrow {
+      color: var(--sky);
+    }
+
+    .hero-copy h1 {
+      font-size: clamp(48px, 6.5vw, 79px);
+      letter-spacing: -2.1px;
+      margin-bottom: 24px;
+    }
+
+    .hero-copy h1 span {
+      display: block;
+      color: var(--sky);
+    }
+
+    .hero-copy > p {
+      max-width: 590px;
+      color: #C1D0E0;
+      font-size: 16px;
+      line-height: 1.95;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 14px;
+      margin-top: 34px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      min-height: 49px;
+      padding: 12px 22px;
+      border: 1px solid transparent;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 700;
+      transition: transform .25s ease, background .25s ease, border-color .25s ease;
+      cursor: pointer;
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+    }
+
+    .btn-primary {
+      color: var(--navy);
+      background: var(--sky);
+    }
+
+    .btn-primary:hover {
+      background: var(--white);
+    }
+
+    .btn-outline {
+      color: var(--white);
+      border-color: rgba(255, 255, 255, .3);
+      background: rgba(255, 255, 255, .035);
+    }
+
+    .btn-outline:hover {
+      border-color: var(--sky);
+      background: rgba(144, 202, 249, .1);
+    }
+
+    .hero-side {
+      justify-self: end;
+      width: min(100%, 310px);
+    }
+
+    .availability-card {
+      position: relative;
+      padding: 29px;
+      border: 1px solid rgba(255, 255, 255, .14);
+      border-radius: 24px;
+      background: linear-gradient(145deg, rgba(255,255,255,.09), rgba(255,255,255,.025));
+      box-shadow: 0 25px 80px rgba(0,0,0,.12);
+      backdrop-filter: blur(14px);
+    }
+
+    .availability-icon {
+      display: grid;
+      place-items: center;
+      width: 55px;
+      height: 55px;
+      margin-bottom: 24px;
+      border: 1px solid rgba(144, 202, 249, .35);
+      border-radius: 17px;
+      color: var(--sky);
+      background: rgba(144, 202, 249, .1);
+      font-size: 22px;
+    }
+
+    .availability-card h3 {
+      margin-bottom: 10px;
+      font-size: 25px;
+    }
+
+    .availability-card p {
+      color: #B9C9DA;
+      font-size: 13px;
+      line-height: 1.9;
+    }
+
+    .availability-status {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: 25px;
+      padding-top: 20px;
+      border-top: 1px solid var(--line);
+      color: #DCEAF6;
+      font-size: 12px;
+    }
+
+    .status-dot {
+      width: 8px;
+      height: 8px;
+      flex: 0 0 8px;
+      border-radius: 50%;
+      background: var(--sky);
+      box-shadow: 0 0 12px rgba(144, 202, 249, .8);
+    }
+
+    /* CONTACT DETAILS */
+
+    .contact-details {
+      background: #F4F8FC;
+    }
+
+    .details-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .detail-card {
+      position: relative;
+      min-height: 205px;
+      padding: 27px;
+      border: 1px solid #E0EAF4;
+      border-radius: var(--radius);
+      background: var(--white);
+      box-shadow: 0 12px 35px rgba(12, 43, 76, .035);
+      overflow: hidden;
+      transition: transform .3s ease, box-shadow .3s ease, border-color .3s ease;
+    }
+
+    .detail-card::after {
+      content: "";
+      position: absolute;
+      width: 120px;
+      height: 120px;
+      right: -65px;
+      bottom: -65px;
+      border-radius: 50%;
+      background: #EAF5FF;
+      transition: transform .35s ease;
+    }
+
+    .detail-card:hover {
+      transform: translateY(-6px);
+      border-color: #B9D9F5;
+      box-shadow: 0 20px 45px rgba(12, 43, 76, .09);
+    }
+
+    .detail-card:hover::after {
+      transform: scale(1.45);
+    }
+
+    .detail-icon {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      place-items: center;
+      width: 48px;
+      height: 48px;
+      margin-bottom: 19px;
+      border-radius: 15px;
+      color: #126DB3;
+      background: #E8F4FF;
+      font-size: 18px;
+    }
+
+    .detail-card h3 {
+      position: relative;
+      z-index: 1;
+      margin-bottom: 7px;
+      font-family: "DM Sans", sans-serif;
+      font-size: 16px;
+      font-weight: 700;
+    }
+
+    .detail-card p {
+      position: relative;
+      z-index: 1;
+      overflow-wrap: anywhere;
+      color: var(--body);
+      font-size: 13px;
+      line-height: 1.8;
+    }
+
+    .detail-link {
+      position: relative;
+      z-index: 1;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 14px;
+      color: #116FB5;
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .detail-link i {
+      transition: transform .2s ease;
+    }
+
+    .detail-link:hover i {
+      transform: translateX(4px);
+    }
+
+    /* MAIN CONTACT AREA */
+
+    .contact-main {
+      position: relative;
+      overflow: hidden;
+      background: var(--white);
+    }
+
+    .contact-layout {
+      display: grid;
+      grid-template-columns: .82fr 1.18fr;
+      gap: 65px;
+      align-items: start;
+    }
+
+    .contact-intro {
+      position: sticky;
+      top: 115px;
+    }
+
+    .contact-intro h2 {
+      margin-bottom: 21px;
+      font-size: clamp(35px, 4vw, 48px);
+    }
+
+    .contact-intro > p {
+      color: var(--body);
+      font-size: 14px;
+      line-height: 2;
+    }
+
+    .intro-points {
+      display: grid;
+      gap: 19px;
+      margin-top: 34px;
+    }
+
+    .intro-point {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+    }
+
+    .intro-point > i {
+      display: grid;
+      place-items: center;
+      width: 40px;
+      height: 40px;
+      flex: 0 0 40px;
+      border-radius: 13px;
+      color: #116FB5;
+      background: #EAF5FF;
+    }
+
+    .intro-point strong {
+      display: block;
+      margin-bottom: 3px;
+      font-size: 13px;
+    }
+
+    .intro-point span {
+      display: block;
+      color: var(--body);
+      font-size: 12px;
+      line-height: 1.8;
+    }
+
+    .form-card {
+      padding: 39px;
+      border: 1px solid #E1EAF3;
+      border-radius: 27px;
+      background: #F9FBFE;
+      box-shadow: var(--shadow);
+    }
+
+    .form-heading {
+      margin-bottom: 29px;
+    }
+
+    .form-heading h3 {
+      margin-bottom: 9px;
+      font-size: 29px;
+    }
+
+    .form-heading p {
+      color: var(--body);
+      font-size: 13px;
+    }
+
+    .contact-form {
+      display: grid;
+      gap: 20px;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 17px;
+    }
+
+    .form-group {
+      display: grid;
+      gap: 8px;
+    }
+
+    .form-group label {
+      color: #263B53;
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      border: 1px solid #D9E4EF;
+      border-radius: 12px;
+      outline: none;
+      color: var(--ink);
+      background: var(--white);
+      font-size: 13px;
+      transition: border-color .2s ease, box-shadow .2s ease;
+    }
+
+    .form-group input {
+      min-height: 51px;
+      padding: 13px 15px;
+    }
+
+    .form-group textarea {
+      min-height: 150px;
+      padding: 14px 15px;
+      resize: vertical;
+    }
+
+    .form-group input::placeholder,
+    .form-group textarea::placeholder {
+      color: #9BAABD;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus {
+      border-color: #64AEEB;
+      box-shadow: 0 0 0 4px rgba(33, 150, 243, .09);
+    }
+
+    .form-submit {
+      width: 100%;
+      min-height: 54px;
+      border: 0;
+      border-radius: 13px;
+      color: var(--white);
+      background: linear-gradient(110deg, #0B3159, #176FB2);
+      font-size: 13px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: transform .25s ease, box-shadow .25s ease;
+    }
+
+    .form-submit:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 25px rgba(14, 75, 126, .18);
+    }
+
+    .form-submit i {
+      margin-left: 9px;
+    }
+
+    .form-note {
+      color: #75869A;
+      text-align: center;
+      font-size: 11px;
+      line-height: 1.8;
+    }
+
+    /* LOCATION */
+
+    .location-section {
+      color: var(--white);
+      background:
+        radial-gradient(ellipse at 90% 0%, rgba(33,150,243,.13), transparent 35%),
+        linear-gradient(130deg, #071A33, #0D294A);
+    }
+
+    .location-layout {
+      display: grid;
+      grid-template-columns: .9fr 1.1fr;
+      align-items: center;
+      gap: 55px;
+    }
+
+    .location-copy .eyebrow {
+      color: var(--sky);
+    }
+
+    .location-copy h2 {
+      margin-bottom: 21px;
+      font-size: clamp(35px, 4vw, 49px);
+    }
+
+    .location-copy > p {
+      max-width: 470px;
+      color: #C0CDDD;
+      font-size: 14px;
+      line-height: 2;
+    }
+
+    .address-box {
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+      margin-top: 28px;
+      padding: 21px;
+      border: 1px solid rgba(144,202,249,.2);
+      border-radius: 17px;
+      background: rgba(255,255,255,.045);
+    }
+
+    .address-box > i {
+      margin-top: 4px;
+      color: var(--sky);
+      font-size: 21px;
+    }
+
+    .address-box strong {
+      display: block;
+      margin-bottom: 5px;
+      font-size: 13px;
+    }
+
+    .address-box span {
+      display: block;
+      color: #C0CDDD;
+      font-size: 13px;
+      line-height: 1.9;
+    }
+
+    .map-card {
+      position: relative;
+      min-height: 340px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 35px;
+      border: 1px solid rgba(144,202,249,.2);
+      border-radius: 25px;
+      background:
+        linear-gradient(rgba(7,26,51,.64), rgba(7,26,51,.82)),
+        repeating-linear-gradient(0deg, transparent, transparent 37px, rgba(144,202,249,.13) 38px, transparent 39px),
+        repeating-linear-gradient(90deg, transparent, transparent 37px, rgba(144,202,249,.13) 38px, transparent 39px),
+        #102E50;
+      overflow: hidden;
+    }
+
+    .map-card::before,
+    .map-card::after {
+      content: "";
+      position: absolute;
+      width: 140%;
+      height: 1px;
+      left: -20%;
+      top: 48%;
+      background: rgba(144,202,249,.2);
+      transform: rotate(-23deg);
+    }
+
+    .map-card::after {
+      transform: rotate(32deg);
+      top: 59%;
+    }
+
+    .map-content {
+      position: relative;
+      z-index: 1;
+      width: min(100%, 310px);
+      padding: 31px 25px;
+      border: 1px solid rgba(255,255,255,.17);
+      border-radius: 20px;
+      text-align: center;
+      background: rgba(7,26,51,.87);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 20px 60px rgba(0,0,0,.18);
+    }
+
+    .map-pin {
+      display: grid;
+      place-items: center;
+      width: 58px;
+      height: 58px;
+      margin: 0 auto 17px;
+      border-radius: 19px;
+      color: var(--navy);
+      background: var(--sky);
+      font-size: 22px;
+      box-shadow: 0 0 0 10px rgba(144,202,249,.1);
+    }
+
+    .map-content h3 {
+      margin-bottom: 9px;
+      font-size: 25px;
+    }
+
+    .map-content p {
+      margin-bottom: 21px;
+      color: #C0CDDD;
+      font-size: 12px;
+      line-height: 1.8;
+    }
+
+    .map-content .btn {
+      width: 100%;
+    }
+
+    /* SOCIAL CONNECTION */
+
+    .social-section {
+      background: #F4F8FC;
+    }
+
+    .social-heading {
+      max-width: 690px;
+      margin: 0 auto 40px;
+      text-align: center;
+    }
+
+    .social-heading .eyebrow {
+      justify-content: center;
+    }
+
+    .social-heading h2 {
+      margin-bottom: 15px;
+      font-size: clamp(34px, 4vw, 47px);
+    }
+
+    .social-heading p {
+      color: var(--body);
+      font-size: 14px;
+    }
+
+    .social-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .social-card {
+      display: flex;
+      align-items: center;
+      gap: 17px;
+      padding: 25px;
+      border: 1px solid #E0EAF4;
+      border-radius: 19px;
+      background: var(--white);
+      transition: transform .25s ease, box-shadow .25s ease;
+    }
+
+    .social-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 18px 40px rgba(12,43,76,.08);
+    }
+
+    .social-icon {
+      display: grid;
+      place-items: center;
+      width: 53px;
+      height: 53px;
+      flex: 0 0 53px;
+      border-radius: 16px;
+      color: #126DB3;
+      background: #EAF5FF;
+      font-size: 21px;
+    }
+
+    .social-card h3 {
+      margin-bottom: 3px;
+      font-family: "DM Sans", sans-serif;
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .social-card p {
+      color: var(--body);
+      font-size: 11px;
+      overflow-wrap: anywhere;
+    }
+
+    .social-arrow {
+      margin-left: auto;
+      color: #6C8299;
+      font-size: 13px;
+    }
+
+    /* CLOSING BANNER */
+
+    .closing-section {
+      padding: 35px 0 100px;
+      background: #F4F8FC;
+    }
+
+    .closing-banner {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 35px;
+      padding: 46px 50px;
+      border-radius: 25px;
+      color: var(--white);
+      background:
+        radial-gradient(circle at 95% 5%, rgba(144,202,249,.17), transparent 27%),
+        linear-gradient(115deg, #0A2240, #123D68);
+      overflow: hidden;
+    }
+
+    .closing-banner h2 {
+      margin-bottom: 10px;
+      font-size: clamp(28px, 3vw, 38px);
+    }
+
+    .closing-banner p {
+      max-width: 560px;
+      color: #C5D4E4;
+      font-size: 13px;
+    }
+
+    .closing-banner .btn {
+      flex-shrink: 0;
+    }
+
+    /* FOOTER */
+
+    .site-footer {
+      color: #C5D3E2;
+      background: #06152A;
+    }
+
+    .footer-main {
+      display: grid;
+      grid-template-columns: 1.2fr .7fr 1fr;
+      gap: 55px;
+      padding: 62px 0 47px;
+    }
+
+    .footer-brand {
+      margin-bottom: 15px;
+      color: var(--white);
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: 27px;
+      font-weight: 700;
+    }
+
+    .footer-brand span {
+      color: var(--sky);
+    }
+
+    .footer-about p {
+      max-width: 340px;
+      color: #9EAFBF;
+      font-size: 12px;
+      line-height: 2;
+    }
+
+    .footer-column h3 {
+      margin-bottom: 19px;
+      color: var(--white);
+      font-family: "DM Sans", sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .footer-links {
+      display: grid;
+      gap: 10px;
+      list-style: none;
+    }
+
+    .footer-links a {
+      color: #9EAFBF;
+      font-size: 12px;
+      transition: color .2s ease;
+    }
+
+    .footer-links a:hover {
+      color: var(--sky);
+    }
+
+    .footer-contact-line {
+      display: flex;
+      align-items: flex-start;
+      gap: 11px;
+      margin-bottom: 13px;
+      color: #9EAFBF;
+      font-size: 12px;
+      overflow-wrap: anywhere;
+    }
+
+    .footer-contact-line i {
+      width: 16px;
+      margin-top: 5px;
+      color: var(--sky);
+    }
+
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 21px 0;
+      border-top: 1px solid rgba(255,255,255,.09);
+      color: #8295A9;
+      font-size: 11px;
+    }
+
+    .footer-bottom a {
+      color: #BFD8EF;
+    }
+
+    /* BACK TO TOP */
+
+    .back-to-top {
+      position: fixed;
+      right: 22px;
+      bottom: 22px;
+      z-index: 100;
+      display: grid;
+      place-items: center;
+      width: 45px;
+      height: 45px;
+      border: 1px solid rgba(255,255,255,.2);
+      border-radius: 14px;
+      color: var(--navy);
+      background: var(--sky);
+      box-shadow: 0 10px 25px rgba(0,0,0,.13);
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(10px);
+      transition: .25s ease;
+    }
+
+    .back-to-top.visible {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+
+    /* REVEAL ANIMATION */
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(22px);
+      transition: opacity .7s ease, transform .7s ease;
+    }
+
+    .reveal.in-view {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .details-grid .detail-card:nth-child(2),
+    .social-grid .social-card:nth-child(2) {
+      transition-delay: .08s;
+    }
+
+    .details-grid .detail-card:nth-child(3),
+    .social-grid .social-card:nth-child(3) {
+      transition-delay: .16s;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        scroll-behavior: auto !important;
+        animation-duration: .01ms !important;
+        transition-duration: .01ms !important;
+      }
+
+      .reveal {
+        opacity: 1;
+        transform: none;
+      }
+    }
+
+    /* RESPONSIVE */
+
+    @media (max-width: 950px) {
+      .hero-inner {
+        grid-template-columns: 1fr .65fr;
+        gap: 35px;
+      }
+
+      .hero-copy h1 {
+        font-size: clamp(45px, 6vw, 65px);
+      }
+
+      .details-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .contact-layout {
+        gap: 35px;
+      }
+
+      .form-card {
+        padding: 29px;
+      }
+
+      .location-layout {
+        gap: 35px;
+      }
+
+      .social-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .footer-main {
+        gap: 30px;
+      }
+    }
+
+    @media (max-width: 720px) {
+      .container {
+        width: min(100% - 34px, 560px);
+      }
+
+      .section {
+        padding: 72px 0;
+      }
+
+      .navbar {
+        min-height: 70px;
+      }
+
+      .menu-toggle {
+        display: grid;
+        place-items: center;
+      }
+
+      .nav-links {
+        position: absolute;
+        top: calc(100% + 1px);
+        left: 0;
+        right: 0;
+        display: none;
+        align-items: stretch;
+        gap: 0;
+        padding: 12px 22px 22px;
+        border-bottom: 1px solid rgba(255,255,255,.1);
+        background: #071A33;
+      }
+
+      .nav-links.open {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .nav-links li {
+        width: 100%;
+      }
+
+      .nav-links a {
+        display: block;
+        padding: 13px 5px;
+      }
+
+      .nav-links .nav-contact {
+        display: inline-flex;
+        padding: 9px 16px;
+        margin-top: 7px;
+      }
+
+      .hero-inner {
+        min-height: auto;
+        padding-block: 78px 65px;
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+
+      .hero-copy h1 {
+        font-size: clamp(45px, 11vw, 66px);
+      }
+
+      .hero-copy > p {
+        font-size: 14px;
+      }
+
+      .hero-side {
+        justify-self: stretch;
+        width: 100%;
+      }
+
+      .availability-card {
+        padding: 25px;
+      }
+
+      .details-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+      }
+
+      .detail-card {
+        min-height: auto;
+      }
+
+      .contact-layout,
+      .location-layout {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+
+      .contact-intro {
+        position: static;
+      }
+
+      .form-card {
+        padding: 25px 20px;
+        border-radius: 21px;
+      }
+
+      .form-row {
+        grid-template-columns: 1fr;
+        gap: 19px;
+      }
+
+      .map-card {
+        min-height: 315px;
+      }
+
+      .social-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .closing-section {
+        padding: 10px 0 72px;
+      }
+
+      .closing-banner {
+        align-items: flex-start;
+        flex-direction: column;
+        padding: 32px 25px;
+      }
+
+      .footer-main {
+        grid-template-columns: 1fr;
+        gap: 32px;
+        padding: 48px 0 35px;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+        gap: 8px;
+      }
+    }
+
+    @media (max-width: 380px) {
+      .container {
+        width: calc(100% - 28px);
+      }
+
+      .hero-actions {
+        align-items: stretch;
+        flex-direction: column;
+      }
+
+      .hero-actions .btn {
+        width: 100%;
+      }
+
+      .form-card {
+        padding: 22px 15px;
+      }
+
+      .social-card {
+        padding: 19px 15px;
+        gap: 12px;
+      }
+
+      .social-icon {
+        width: 45px;
+        height: 45px;
+        flex-basis: 45px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVIGATION -->
+  <header class="site-header" id="top">
+    <nav class="navbar container" aria-label="Main navigation">
+      <a class="brand" href="index.html" aria-label="Oishi home">
+        OISHI<span>.</span>
+      </a>
+
+      <button
+        class="menu-toggle"
+        id="menuToggle"
+        aria-label="Toggle navigation"
+        aria-expanded="false"
+        aria-controls="navLinks"
+        type="button">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html#home">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="activities.html">Activities</a></li>
+        <li><a href="index.html#projects">Projects</a></li>
+        <li><a href="index.html#experience">Experience</a></li>
+        <li><a class="nav-contact active" href="contact.html" aria-current="page">Contact Me</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- HERO -->
+    <section class="contact-hero">
+      <div class="container hero-inner">
+
+        <div class="hero-copy">
+          <span class="eyebrow">Contact & Collaboration</span>
+          <h1>
+            Let's Start a
+            <span>Conversation.</span>
+          </h1>
+          <p>
+            Every meaningful opportunity starts with a conversation.
+            Whether you have a professional inquiry, a creative idea,
+            or a collaboration in mind, I'd be happy to connect with you.
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#contact-form">
+              Send a Message <i class="fa-solid fa-arrow-right"></i>
+            </a>
+            <a class="btn btn-outline" href="tel:+8801750445537">
+              <i class="fa-solid fa-phone"></i> Call Me
+            </a>
+          </div>
+        </div>
+
+        <aside class="hero-side">
+          <div class="availability-card">
+            <div class="availability-icon">
+              <i class="fa-regular fa-comments"></i>
+            </div>
+            <h3>Let's Connect</h3>
+            <p>
+              Open to professional networking, meaningful conversations,
+              creative collaboration and new opportunities.
+            </p>
+            <div class="availability-status">
+              <span class="status-dot"></span>
+              <span>Reach out through your preferred channel</span>
+            </div>
+          </div>
+        </aside>
+
+      </div>
+    </section>
+
+    <!-- CONTACT DETAILS -->
+    <section class="contact-details section" id="contact-details">
+      <div class="container">
+
+        <div class="section-heading reveal">
+          <span class="eyebrow">Get in Touch</span>
+          <h2>Find the Right Way to Connect.</h2>
+          <p>
+            Choose the contact method that works best for you.
+            My contact details and social profiles are listed below.
+          </p>
+        </div>
+
+        <div class="details-grid">
+
+          <article class="detail-card reveal">
+            <div class="detail-icon"><i class="fa-solid fa-phone"></i></div>
+            <h3>Phone</h3>
+            <p>01750445537</p>
+            <a class="detail-link" href="tel:+8801750445537">
+              Call Now <i class="fa-solid fa-arrow-right"></i>
+            </a>
+          </article>
+
+          <article class="detail-card reveal">
+            <div class="detail-icon"><i class="fa-regular fa-envelope"></i></div>
+            <h3>Email Address</h3>
+            <p>fariaahmedoishi@gmail.com</p>
+            <a class="detail-link" href="mailto:fariaahmedoishi@gmail.com">
+              Send an Email <i class="fa-solid fa-arrow-right"></i>
+            </a>
+          </article>
+
+          <article class="detail-card reveal">
+            <div class="detail-icon"><i class="fa-brands fa-youtube"></i></div>
+            <h3>YouTube</h3>
+            <p>@FariaAhmedOishi</p>
+            <a class="detail-link"
+               href="https://www.youtube.com/@FariaAhmedOishi"
+               target="_blank" rel="noopener noreferrer">
+              Visit Channel <i class="fa-solid fa-arrow-right"></i>
+            </a>
+          </article>
+
+          <article class="detail-card reveal">
+            <div class="detail-icon"><i class="fa-brands fa-facebook-f"></i></div>
+            <h3>Facebook</h3>
+            <p>Faria Ahmed Oishi</p>
+            <a class="detail-link"
+               href="https://www.facebook.com/faria.ahmed.oishi.2025"
+               target="_blank" rel="noopener noreferrer">
+              View Profile <i class="fa-solid fa-arrow-right"></i>
+            </a>
+          </article>
+
+          <article class="detail-card reveal">
+            <div class="detail-icon"><i class="fa-solid fa-location-dot"></i></div>
+            <h3>Location</h3>
+            <p>Mohammadpur, Dhaka - 1207, Bangladesh</p>
+            <a class="detail-link"
+               href="https://www.google.com/maps/search/?api=1&query=13%2F4%2C%20Block-C%2C%20Tajmahal%20Road%2C%20Mohammadpur%2C%20Dhaka%201207"
+               target="_blank" rel="noopener noreferrer">
+              View Location <i class="fa-solid fa-arrow-right"></i>
+            </a>
+          </article>
+
+          <article class="detail-card reveal">
+            <div class="detail-icon"><i class="fa-regular fa-paper-plane"></i></div>
+            <h3>Professional Inquiry</h3>
+            <p>Have an idea or an opportunity to discuss? Send a message.</p>
+            <a class="detail-link" href="#contact-form">
+              Start a Conversation <i class="fa-solid fa-arrow-right"></i>
+            </a>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- MESSAGE FORM -->
+    <section class="contact-main section" id="contact-form">
+      <div class="container contact-layout">
+
+        <div class="contact-intro reveal">
+          <span class="eyebrow">Send a Message</span>
+          <h2>Have Something in Mind?</h2>
+          <p>
+            Use the form to prepare your message. Share a little information
+            about your inquiry, project or collaboration, and I'll be able to
+            understand what you'd like to discuss.
+          </p>
+
+          <div class="intro-points">
+            <div class="intro-point">
+              <i class="fa-regular fa-envelope"></i>
+              <div>
+                <strong>Direct Communication</strong>
+                <span>Your message will be prepared for email.</span>
+              </div>
+            </div>
+
+            <div class="intro-point">
+              <i class="fa-solid fa-handshake"></i>
+              <div>
+                <strong>Professional Opportunities</strong>
+                <span>Share ideas, proposals and collaboration requests.</span>
+              </div>
+            </div>
+
+            <div class="intro-point">
+              <i class="fa-solid fa-shield-halved"></i>
+              <div>
+                <strong>Your Information</strong>
+                <span>This page does not store form submissions on a server.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-card reveal">
+          <div class="form-heading">
+            <h3>Write to Me</h3>
+            <p>Fill in the details below to prepare your email.</p>
+          </div>
+
+          <form class="contact-form" id="messageForm">
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="fullName">Your Name *</label>
+                <input
+                  type="text"
+                  id="fullName"
+                  name="name"
+                  placeholder="Enter your full name"
+                  autocomplete="name"
+                  required>
+              </div>
+
+              <div class="form-group">
+                <label for="email">Your Email *</label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  placeholder="you@example.com"
+                  autocomplete="email"
+                  required>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="subject">Subject *</label>
+              <input
+                type="text"
+                id="subject"
+                name="subject"
+                placeholder="What would you like to discuss?"
+                required>
+            </div>
+
+            <div class="form-group">
+              <label for="message">Your Message *</label>
+              <textarea
+                id="message"
+                name="message"
+                placeholder="Write your message here..."
+                required></textarea>
+            </div>
+
+            <button type="submit" class="form-submit">
+              Prepare Email <i class="fa-solid fa-paper-plane"></i>
+            </button>
+
+            <p class="form-note">
+              This button opens your email application with the message details.
+              Your email is not sent automatically by this website.
+            </p>
+          </form>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- LOCATION -->
+    <section class="location-section section" id="location">
+      <div class="container location-layout">
+
+        <div class="location-copy reveal">
+          <span class="eyebrow">Find My Location</span>
+          <h2>Based in Dhaka, Bangladesh.</h2>
+          <p>
+            For location-related inquiries or in-person meetings, please
+            use the address below and contact me beforehand to coordinate.
+          </p>
+
+          <div class="address-box">
+            <i class="fa-solid fa-location-dot"></i>
+            <div>
+              <strong>Contact Address</strong>
+              <span>
+                13/4, Block-C, Tajmahal Road,<br>
+                Mohammadpur, Dhaka - 1207,<br>
+                Bangladesh
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <div class="map-card reveal">
+          <div class="map-content">
+            <div class="map-pin">
+              <i class="fa-solid fa-location-dot"></i>
+            </div>
+            <h3>Mohammadpur</h3>
+            <p>
+              Tajmahal Road, Block-C<br>
+              Dhaka - 1207, Bangladesh
+            </p>
+            <a
+              class="btn btn-primary"
+              href="https://www.google.com/maps/search/?api=1&query=13%2F4%2C%20Block-C%2C%20Tajmahal%20Road%2C%20Mohammadpur%2C%20Dhaka%201207"
+              target="_blank"
+              rel="noopener noreferrer">
+              <i class="fa-solid fa-map-location-dot"></i>
+              Open Google Maps
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SOCIAL CONNECTION -->
+    <section class="social-section section" id="social">
+      <div class="container">
+
+        <div class="social-heading reveal">
+          <span class="eyebrow">Stay Connected</span>
+          <h2>Connect Beyond This Page.</h2>
+          <p>
+            Visit my social profiles and YouTube channel to explore more
+            and stay connected.
+          </p>
+        </div>
+
+        <div class="social-grid">
+
+          <a class="social-card reveal"
+             href="https://www.youtube.com/@FariaAhmedOishi"
+             target="_blank" rel="noopener noreferrer">
+            <div class="social-icon"><i class="fa-brands fa-youtube"></i></div>
+            <div>
+              <h3>YouTube</h3>
+              <p>@FariaAhmedOishi</p>
+            </div>
+            <i class="fa-solid fa-arrow-up-right-from-square social-arrow"></i>
+          </a>
+
+          <a class="social-card reveal"
+             href="https://www.facebook.com/faria.ahmed.oishi.2025"
+             target="_blank" rel="noopener noreferrer">
+            <div class="social-icon"><i class="fa-brands fa-facebook-f"></i></div>
+            <div>
+              <h3>Facebook</h3>
+              <p>Faria Ahmed Oishi</p>
+            </div>
+            <i class="fa-solid fa-arrow-up-right-from-square social-arrow"></i>
+          </a>
+
+          <a class="social-card reveal"
+             href="mailto:fariaahmedoishi@gmail.com">
+            <div class="social-icon"><i class="fa-regular fa-envelope"></i></div>
+            <div>
+              <h3>Email</h3>
+              <p>Get in touch directly</p>
+            </div>
+            <i class="fa-solid fa-arrow-up-right-from-square social-arrow"></i>
+          </a>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- CLOSING CTA -->
+    <section class="closing-section">
+      <div class="container">
+        <div class="closing-banner reveal">
+          <div>
+            <h2>Every Great Connection Starts Here.</h2>
+            <p>
+              Have a question, an idea or a professional opportunity?
+              Feel free to reach out and start the conversation.
+            </p>
+          </div>
+          <a class="btn btn-primary" href="mailto:fariaahmedoishi@gmail.com">
+            Get in Touch <i class="fa-solid fa-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+
+      <div class="footer-main">
+
+        <div class="footer-about">
+          <a class="footer-brand" href="index.html">OISHI<span>.</span></a>
+          <p>
+            A professional portfolio representing work, experiences,
+            creative interests and opportunities for meaningful collaboration.
+          </p>
+        </div>
+
+        <div class="footer-column">
+          <h3>Quick Links</h3>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="activities.html">Activities</a></li>
+            <li><a href="index.html#projects">Projects</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-column">
+          <h3>Contact Information</h3>
+
+          <a class="footer-contact-line" href="tel:+8801750445537">
+            <i class="fa-solid fa-phone"></i>
+            <span>01750445537</span>
+          </a>
+
+          <a class="footer-contact-line" href="mailto:fariaahmedoishi@gmail.com">
+            <i class="fa-regular fa-envelope"></i>
+            <span>fariaahmedoishi@gmail.com</span>
+          </a>
+
+          <div class="footer-contact-line">
+            <i class="fa-solid fa-location-dot"></i>
+            <span>Mohammadpur, Dhaka - 1207, Bangladesh</span>
+          </div>
+
+          <a class="footer-contact-line"
+             href="https://www.youtube.com/@FariaAhmedOishi"
+             target="_blank" rel="noopener noreferrer">
+            <i class="fa-brands fa-youtube"></i>
+            <span>YouTube Channel</span>
+          </a>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <p>© <span id="currentYear"></span> Faria Ahmed Oishi. All rights reserved.</p>
+        <a href="#top">Back to top ↑</a>
+      </div>
+
+    </div>
+  </footer>
+
+  <a class="back-to-top" id="backToTop" href="#top" aria-label="Back to top">
+    <i class="fa-solid fa-arrow-up"></i>
+  </a>
+
+  <script>
+    /* MOBILE NAVIGATION */
+    const menuToggle = document.getElementById("menuToggle");
+    const navLinks = document.getElementById("navLinks");
+
+    menuToggle.addEventListener("click", () => {
+      const isOpen = navLinks.classList.toggle("open");
+
+      menuToggle.setAttribute("aria-expanded", String(isOpen));
+      menuToggle.innerHTML = isOpen
+        ? '<i class="fa-solid fa-xmark"></i>'
+        : '<i class="fa-solid fa-bars"></i>';
+    });
+
+    navLinks.querySelectorAll("a").forEach(link => {
+      link.addEventListener("click", () => {
+        navLinks.classList.remove("open");
+        menuToggle.setAttribute("aria-expanded", "false");
+        menuToggle.innerHTML = '<i class="fa-solid fa-bars"></i>';
+      });
+    });
+
+    /* CONTACT FORM — PREPARE AN EMAIL */
+    const messageForm = document.getElementById("messageForm");
+
+    messageForm.addEventListener("submit", function(event) {
+      event.preventDefault();
+
+      if (!messageForm.reportValidity()) return;
+
+      const name = document.getElementById("fullName").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const subject = document.getElementById("subject").value.trim();
+      const message = document.getElementById("message").value.trim();
+
+      const emailSubject = encodeURIComponent(subject);
+      const emailBody = encodeURIComponent(
+        "Name: " + name + "\n" +
+        "Email: " + email + "\n\n" +
+        "Message:\n" + message
+      );
+
+      const mailtoLink =
+        "mailto:fariaahmedoishi@gmail.com" +
+        "?subject=" + emailSubject +
+        "&body=" + emailBody;
+
+      window.location.href = mailtoLink;
+    });
+
+    /* CURRENT YEAR */
+    document.getElementById("currentYear").textContent =
+      new Date().getFullYear();
+
+    /* SCROLL REVEAL */
+    const revealElements = document.querySelectorAll(".reveal");
+
+    if ("IntersectionObserver" in window) {
+      const revealObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("in-view");
+            observer.unobserve(entry.target);
+          }
+        });
+      }, {
+        threshold: 0.12,
+        rootMargin: "0px 0px -30px 0px"
+      });
+
+      revealElements.forEach(element => revealObserver.observe(element));
+    } else {
+      revealElements.forEach(element => element.classList.add("in-view"));
+    }
+
+    /* BACK TO TOP */
+    const backToTop = document.getElementById("backToTop");
+
+    window.addEventListener("scroll", () => {
+      backToTop.classList.toggle("visible", window.scrollY > 450);
+    }, { passive: true });
+  </script>
+
+</body>
+</html>
+
