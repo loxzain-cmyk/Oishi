@@ -147,11 +147,24 @@ function renderEditorialRows(items, organisation, category, startIndex = 0) {
   return rows.join("");
 }
 
-P.tv
-  .filter(project => project[2] && project[2].trim() !== "")
-  .slice(0, 12)
-  .map((project, index) => videoCard(project, index, "ULAB TV"))
-  .join("");
+
+/* ULAB TV — Render all 12 video projects */
+
+const ulabTvGrid = document.querySelector("#ulabTvGrid");
+
+if (ulabTvGrid) {
+  const tvProjects = P.tv.filter(
+    project => project[2] && project[2].trim() !== ""
+  ).slice(0, 12);
+
+  ulabTvGrid.innerHTML = tvProjects
+    .map((project, index) => videoCard(project, index, "ULAB TV"))
+    .join("");
+
+  console.log("ULAB TV rendered:", tvProjects.length);
+} else {
+  console.error("ULAB TV container #ulabTvGrid was not found.");
+}
 
 
 /* THE ULABIAN — Text-based editorial boxes */
