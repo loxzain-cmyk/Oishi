@@ -2371,5 +2371,47 @@ a:focus-visible {
   }
 }
 
+/* THE ULABIAN — Force 4 balanced cards in one row */
+.ulabian-home-grid {
+  display: grid !important;
+  grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+  gap: 12px;
+  width: 100%;
+  align-items: stretch;
+}
+
+.ulabian-home-grid .ulabian-link-card {
+  box-sizing: border-box;
+  width: 100%;
+  min-width: 0;
+  min-height: 175px;
+  padding: 16px 12px;
+  margin: 0;
+}
+
+.ulabian-home-grid .ulabian-work-title {
+  font-size: 14px;
+  line-height: 1.45;
+  overflow-wrap: anywhere;
+}
+
+.ulabian-home-grid .ulabian-work-type,
+.ulabian-home-grid .ulabian-work-link {
+  font-size: 9px;
+}
+
+/* Tablet and mobile */
+@media (max-width: 600px) {
+  .ulabian-home-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+}
+
+@media (max-width: 360px) {
+  .ulabian-home-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
 
 
